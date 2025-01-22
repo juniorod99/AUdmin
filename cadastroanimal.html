@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>AUdmin</title>
+</head>
+
+<body>
+    <!-- ======= navigation ======= -->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><img class="logo" src="./assets/img/au-branca.png" alt=""></span>
+                        <span class="title">Animais Universitários</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="index.html">
+                        <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                        <span class="title">Dashboard</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="paw-outline"></ion-icon></span>
+                        <span class="title">Animais</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="people-outline"></ion-icon></span>
+                        <span class="title">Adotantes</span>
+                    </a>
+                </li>
+
+                <li class="hovered">
+                    <a href="cadastroanimal.html">
+                        <span class="icon"><ion-icon name="add-outline"></ion-icon></span>
+                        <span class="title">Cadastrar Animal</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
+                        <span class="title">Cadastrar Adotante</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="heart-outline"></ion-icon></span>
+                        <span class="title">Adoção</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
+                        <span class="title">Sair</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+                <div class="search">
+                    <label for="">
+                        <input type="text" name="" id="" placeholder="Search here">
+                        <ion-icon name="search-outline"></ion-icon>
+                    </label>
+                </div>
+                <div class="user">
+                    <img src="./assets/img/ken.jpeg" alt="">
+                </div>
+            </div>
+            <div id="cadastro">
+                <div id="form_container">
+                    <div id="form_header">
+                        <h1 id="form_title">Criar conta</h1>
+                        <button class="btn_default">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                        </button>
+                    </div>
+
+                    <form action="" id="form">
+                        <div id="input_container">
+                            <div class="input_box">
+                                <label for="name" class="form_label">Primeiro Nome</label>
+                                <div class="input_field">
+                                    <input type="text" name="name" id="name" class="form_control" placeholder="Fulano">
+                                    <i class="fa-regular fa-user"></i>
+                                </div>
+                            </div>
+
+                            <div class="input_box">
+                                <label for="last_name" class="form_label">Ultimo Nome</label>
+                                <div class="input_field">
+                                    <input type="text" name="last_name" id="last_name" class="form_control" placeholder="De Tal">
+                                    <i class="fa-regular fa-user"></i>
+                                </div>
+                            </div>
+
+                            <div class="input_box">
+                                <label for="birthdate" class="form_label">Nascimento</label>
+                                <div class="input_field">
+                                    <input type="date" name="birthdate" id="birthdate" class="form_control">
+                                </div>
+                            </div>
+
+                            <div class="input_box">
+                                <label for="email" class="form_label">E-mail</label>
+                                <div class="input_field">
+                                    <input type="email" name="email" id="email" class="form_control" placeholder="exemplo@gmail.com">
+                                    <i class="fa-regular fa-envelope"></i>
+                                </div>
+                            </div>
+
+                            <div class="input_box">
+                                <label for="password" class="form_label">Senha</label>
+                                <div class="input_field">
+                                    <input type="password" name="password" id="password" class="form_control" placeholder="**********">
+                                    <i class="fa-regular fa-eye-slash password_icon"></i>
+                                </div>
+                            </div>
+
+                            <div class="input_box">
+                                <label for="confirm_password" class="form_label">Confirmar Senha</label>
+                                <div class="input_field">
+                                    <input type="password" name="confirm_password" id="confirm_password" class="form_control" placeholder="**********">
+                                    <i class="fa-regular fa-eye-slash password_icon"></i>
+                                </div>
+                            </div>
+
+                            <div class="radio_container">
+                                <label for="" class="form_label">Gênero</label>
+                                <div id="gender_inputs">
+                                    <div class="radio_box">
+                                        <input type="radio" name="gender" id="female" class="form_control" value="female">
+                                        <label for="female" class="form_label">Feminino</label>
+                                    </div>
+
+                                    <div class="radio_box">
+                                        <input type="radio" name="gender" id="male" class="form_control" value="male">
+                                        <label for="male" class="form_label">Masculino</label>
+                                    </div>
+
+                                    <div class="radio_box">
+                                        <input type="radio" name="gender" id="other" class="form_control" value="other">
+                                        <label for="other" class="form_label">Outro</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn_default"><i class="fa-solid fa-check"></i>Criar Conta</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <script defer src="assets/js/script.js"></script>
+
+    <!-- ===== ionicons ====== -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
