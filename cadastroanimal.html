@@ -90,83 +90,160 @@
             <div id="cadastro">
                 <div id="form_container">
                     <div id="form_header">
-                        <h1 id="form_title">Criar conta</h1>
-                        <button class="btn_default">
-                            <i class="fa-solid fa-right-to-bracket"></i>
-                        </button>
+                        <h1 id="form_title">Cadastrar AU</h1>
                     </div>
 
                     <form action="" id="form">
                         <div id="input_container">
+                            <div class="input_infos">
+                                <div class="input_box">
+                                    <label for="name" class="form_label">Nome</label>
+                                    <div class="input_field">
+                                        <input type="text" name="name" id="name" class="form_control" placeholder="Fulano">
+
+                                    </div>
+                                </div>
+
+                                <div class="input_box">
+                                    <label for="last_name" class="form_label">Idade</label>
+                                    <div class="input_field">
+                                        <input type="number" name="last_name" id="last_name" class="form_control" placeholder="ex: 2">
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input_box input_file">
+                                <label for="file" id="label_img" class="form_label file_input">
+                                    <div class="drop_zone" id="drop_zone">
+                                        <input type="file" name="" id="file">
+                                        <img src="./assets/img/photo1.png" id="cover" alt="">
+                                    </div>
+                                </label>
+                            </div>
+
+
                             <div class="input_box">
-                                <label for="name" class="form_label">Primeiro Nome</label>
+                                <label for="birthdate" class="form_label">Espécie</label>
                                 <div class="input_field">
-                                    <input type="text" name="name" id="name" class="form_control" placeholder="Fulano">
-                                    <i class="fa-regular fa-user"></i>
+                                    <select class="form_control" name="" id="">
+                                        <option value="" selected disabled>Selecione uma espécie</option>
+                                        <option value="">Gato</option>
+                                        <option value="">Cachorro</option>
+                                    </select>
                                 </div>
                             </div>
 
                             <div class="input_box">
-                                <label for="last_name" class="form_label">Ultimo Nome</label>
+                                <label for="sexo" class="form_label">Sexo</label>
                                 <div class="input_field">
-                                    <input type="text" name="last_name" id="last_name" class="form_control" placeholder="De Tal">
-                                    <i class="fa-regular fa-user"></i>
-                                </div>
-                            </div>
-
-                            <div class="input_box">
-                                <label for="birthdate" class="form_label">Nascimento</label>
-                                <div class="input_field">
-                                    <input type="date" name="birthdate" id="birthdate" class="form_control">
-                                </div>
-                            </div>
-
-                            <div class="input_box">
-                                <label for="email" class="form_label">E-mail</label>
-                                <div class="input_field">
-                                    <input type="email" name="email" id="email" class="form_control" placeholder="exemplo@gmail.com">
-                                    <i class="fa-regular fa-envelope"></i>
-                                </div>
-                            </div>
-
-                            <div class="input_box">
-                                <label for="password" class="form_label">Senha</label>
-                                <div class="input_field">
-                                    <input type="password" name="password" id="password" class="form_control" placeholder="**********">
-                                    <i class="fa-regular fa-eye-slash password_icon"></i>
-                                </div>
-                            </div>
-
-                            <div class="input_box">
-                                <label for="confirm_password" class="form_label">Confirmar Senha</label>
-                                <div class="input_field">
-                                    <input type="password" name="confirm_password" id="confirm_password" class="form_control" placeholder="**********">
-                                    <i class="fa-regular fa-eye-slash password_icon"></i>
+                                    <select class="form_control" name="sexo" id="">
+                                        <option value="" disabled selected>Selecione o sexo</option>
+                                        <option value="">Macho</option>
+                                        <option value="">Fêmea</option>
+                                    </select>
                                 </div>
                             </div>
 
                             <div class="radio_container">
-                                <label for="" class="form_label">Gênero</label>
+                                <label for="" class="form_label">Vacinado</label>
                                 <div id="gender_inputs">
                                     <div class="radio_box">
-                                        <input type="radio" name="gender" id="female" class="form_control" value="female">
-                                        <label for="female" class="form_label">Feminino</label>
+                                        <input type="radio" name="vacina" id="sim" class="form_control" value="sim">
+                                        <label for="female" class="form_label">Sim</label>
                                     </div>
 
                                     <div class="radio_box">
-                                        <input type="radio" name="gender" id="male" class="form_control" value="male">
-                                        <label for="male" class="form_label">Masculino</label>
-                                    </div>
-
-                                    <div class="radio_box">
-                                        <input type="radio" name="gender" id="other" class="form_control" value="other">
-                                        <label for="other" class="form_label">Outro</label>
+                                        <input type="radio" name="vacina" id="nao" class="form_control" value="nao">
+                                        <label for="nao" class="form_label">Não</label>
                                     </div>
                                 </div>
                             </div>
+
+                            <div class="radio_container">
+                                <label for="" class="form_label">Castrado</label>
+                                <div id="gender_inputs">
+                                    <div class="radio_box">
+                                        <input type="radio" name="castrado" id="female" class="form_control" value="female">
+                                        <label for="female" class="form_label">Sim</label>
+                                    </div>
+
+                                    <div class="radio_box">
+                                        <input type="radio" name="castrado" id="male" class="form_control" value="male">
+                                        <label for="male" class="form_label">Não</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input_box">
+                                <label for="local" class="form_label">Ele está no campus ou LT?</label>
+                                <div class="input_field">
+                                    <select class="form_control" name="local" id="">
+                                        <option value="" selected disabled>Selecione uma opção</option>
+                                        <option value="">Campus</option>
+                                        <option value="">LT</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="input_box">
+                                <label for="lt" class="form_label">Qual LT?</label>
+                                <div class="input_field">
+                                    <select class="form_control" name="lt" id="">
+                                        <option value="" disabled selected>Selecione o LT</option>
+                                        <option value="">Casa do Fulano</option>
+                                        <option value="">Casa do Ciclano</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="radio_container">
+                                <label for="" class="form_label">Disponivel para adoção</label>
+                                <div id="gender_inputs">
+                                    <div class="radio_box">
+                                        <input type="radio" name="castrado" id="female" class="form_control" value="female">
+                                        <label for="female" class="form_label">Sim</label>
+                                    </div>
+
+                                    <div class="radio_box">
+                                        <input type="radio" name="castrado" id="male" class="form_control" value="male">
+                                        <label for="male" class="form_label">Não</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="radio_container">
+                                <label for="" class="form_label">Docil</label>
+                                <div id="gender_inputs">
+                                    <div class="radio_box">
+                                        <input type="radio" name="castrado" id="female" class="form_control" value="female">
+                                        <label for="female" class="form_label">Sim</label>
+                                    </div>
+
+                                    <div class="radio_box">
+                                        <input type="radio" name="castrado" id="male" class="form_control" value="male">
+                                        <label for="male" class="form_label">Não</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input_box col-2">
+                                <label for="origem" class="form_label">Local de Origem</label>
+                                <div class="input_field">
+                                    <input type="text" name="origem" id="origem" class="form_control" placeholder="ex: UFC">
+                                </div>
+                            </div>
+
+                            <div class="input_box col-2">
+                                <label for="observacao" class="form_label">Observações Gerais</label>
+                                <div class="input_field">
+                                    <textarea class="form_control" name="" id="" cols="30" rows="5"></textarea>
+                                </div>
+                            </div>
+
                         </div>
 
-                        <button type="submit" class="btn_default"><i class="fa-solid fa-check"></i>Criar Conta</button>
+                        <button type="submit" class="btn_default"><i class="fa-solid fa-check"></i>Efetuar Cadastro</button>
                     </form>
                 </div>
 

@@ -1,12 +1,14 @@
 #cadastro{
-    display: flex;
+    /* margin: 20px; */
+    /* width: 500px; */
+    /* display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: calc(100vh - 60px);
+    align-items: center; */
+    /* min-height: calc(100vh - 60px);  */
 }
 
 .btn_default{
-    background-color: #6366f1;
+    background-color: var(--yellow);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,27 +17,29 @@
     border-radius: 8px;
     font-size: 15px;
     font-weight: 500;
-    color: var(--white);
+    color: var(--black1);
     cursor: pointer;
     gap: 8px;
     height: fit-content;
     box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease;
     transition: background-color 0.3s ease;
 }
 
 .btn_default:hover{
-    background-color: #818cf8;
+    color: var(--white);
+    background-color: var(--orange);
 }
 
 #form_container{
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 12px;
     height: 100%;
     background-color: var(--white);
-    padding: 20px;
+    padding: 20px 100px;
     border-radius: 8px;
-    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    /* box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08); */
 }
 
 #form_header{
@@ -56,7 +60,7 @@
     width: 100px;
     height: 3px;
     border-radius: 30px;
-    background-color: #6366f1;
+    background-color: var(--yellow);
     left: 0;
     bottom: 0;
 }
@@ -71,11 +75,13 @@
 
 #input_container{
     display: grid;
-    gap: 24px;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
 }
 
 .form_label{
-    font-size: 12px;
+    font-size: 0.8rem;
+    /* font-size: 12px; */
     color:#404044;
     font-weight: 500;
 }
@@ -84,8 +90,21 @@
     display: flex;
     align-items: center;
     background-color: var(--white);
+    border: 1px solid #ededed;
     border-radius: 8px;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); */
+}
+
+.input_file{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input_infos{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 }
 
 .input_field i {
@@ -112,17 +131,17 @@
     outline: none;
 }
 
+.col-2{
+    grid-column: span 2;
+}
+
 .input_box .input_field:focus-within{
-    outline:2px solid #6366f1;
+    outline:2px solid var(--yellow);
 }
 
 input:-webkit-autofill{
     -webkit-box-shadow:0 0 0 1000px white inset !important;
     color: #000;
-}
-
-.radio_container{
-    grid-column: span 2;
 }
 
 #gender_inputs{
@@ -138,10 +157,75 @@ input:-webkit-autofill{
 }
 
 .form_control[type="radio"]{
-    accent-color: #6366f1;
+    accent-color: var(--orange);
 }
 
-@media screen and (max-width:500px){
+.file_input{
+    width: 150px;
+    height: 150px;
+    background-color: #eee;
+    display: grid;
+    grid-template-areas: "stack";
+    border-radius: 50%;
+}
+
+.file_input > *{
+    grid-area: stack;
+}
+
+.file_input > .drop_zone > input {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.file_input > .drop_zone {
+    /* padding: 10px; */
+    margin: 5px;
+    width: 140px;
+    height: 140px;
+    border: dashed 2px #aaa;
+    /* background-image: url('../img/ken.jpeg'); */
+    background-position-x: -50px;
+    background-position-y: -50px;
+    border-radius: 50%;
+}
+
+.file_input.active > .drop_zone{
+    margin: 14px;
+    background-color: var(--yellow);
+}
+
+.drop_zone{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 300ms;
+    position: relative;
+}
+
+.drop_zone p {
+    z-index: 99;
+    text-shadow: rgba(18, 18, 18, 0.5) 1px 0 20px;
+}
+
+.drop_zone img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.8;
+    transition: opacity 500ms;
+    object-fit: cover;
+}
+
+.file_input:hover .drop_zone > img{
+    opacity: 0.1;
+}
+
+@media screen and (max-width:580px){
     #form_container{
         width: 100%;
         min-height: 100vh;
