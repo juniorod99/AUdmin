@@ -33,7 +33,6 @@ passwordIcons.forEach((icon) => {
 
 //Drop File
 const label = document.querySelector('#label_img');
-console.log(label);
 
 function onEnter() {
   label.classList.add('active');
@@ -68,5 +67,22 @@ input.addEventListener('change', (event) => {
     img.src = URL.createObjectURL(input.files[0]);
 
     dropzone.appendChild(img);
+  }
+});
+
+//Disable Select
+const selectLocal = document.querySelector('#select_local');
+const selectLT = document.querySelector('#select_lt');
+const optionsLT = selectLT.options;
+
+selectLocal.addEventListener('change', (event) => {
+  const selectedOption =
+    selectLocal.options[selectLocal.selectedIndex].innerHTML;
+
+  if (selectedOption === 'Lar Temporário') {
+    selectLT.removeAttribute('disabled');
+  } else {
+    selectLT.setAttribute('disabled', true);
+    optionsLT[0].selected = true;
   }
 });
