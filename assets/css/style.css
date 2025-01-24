@@ -1,2 +1,16 @@
-@import "./geral.css";
-@import './cadastro.css';
+/* Global */
+@import "./global/global.css";
+@import "./global/menu.css";
+@import "./global/topbar.css";
+
+/* Dashboard */
+@import "./dashboard/main.css";
+@import "./dashboard/cards.css";
+@import "./dashboard/tables.css";
+
+/* Cadastro */
+@import "./cadastro/cadastro.css";
+
+/* Utilidades */
+@import "./utilidades/cores.css";
+@import "./utilidades/componentes.css";

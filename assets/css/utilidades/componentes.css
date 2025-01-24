@@ -1,0 +1,23 @@
+.btn_default{
+    background-color: var(--yellow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--black1);
+    cursor: pointer;
+    gap: 8px;
+    height: fit-content;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: color 0.3s ease;
+    transition: background-color 0.3s ease;
+}
+
+.btn_default:hover{
+    color: var(--white);
+    background-color: var(--orange);
+}
