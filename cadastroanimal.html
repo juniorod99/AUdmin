@@ -88,6 +88,7 @@
                     <img src="./assets/img/ken.jpeg" alt="">
                 </div>
             </div>
+
             <div id="cadastro">
                 <div id="form_container">
                     <div id="form_header">
@@ -101,8 +102,8 @@
                                     <label for="name" class="form_label">Nome</label>
                                     <div class="input_field">
                                         <input type="text" name="name" id="name" class="form_control" placeholder="Fulano">
-
                                     </div>
+                                    <span class="error"></span>
                                 </div>
 
                                 <div class="input_box">
@@ -110,6 +111,7 @@
                                     <div class="input_field">
                                         <input type="number" min="0" name="idade" id="idade" class="form_control" placeholder="ex: 2">
                                     </div>
+                                    <span class="error"></span>
                                 </div>
                             </div>
 
@@ -132,20 +134,22 @@
                                         <option value="Cachorro">Cachorro</option>
                                     </select>
                                 </div>
+                                <span class="error"></span>
                             </div>
 
                             <div class="input_box">
                                 <label for="sexo" class="form_label">Sexo</label>
                                 <div class="input_field">
                                     <select class="form_control" name="sexo" id="sexo">
-                                        <option disabled selected>Selecione o sexo</option>
+                                        <option value="" disabled selected>Selecione o sexo</option>
                                         <option value="Macho">Macho</option>
                                         <option value="Fêmea">Fêmea</option>
                                     </select>
                                 </div>
+                                <span class="error"></span>
                             </div>
 
-                            <div class="radio_container">
+                            <div id="vacinado" class="radio_container">
                                 <label for="vacinado" class="form_label">Vacinado</label>
                                 <div class="radio_inputs">
                                     <div class="radio_box">
@@ -158,9 +162,10 @@
                                         <label for="vac_nao" class="form_label">Não</label>
                                     </div>
                                 </div>
+                                <span class="error"></span>
                             </div>
 
-                            <div class="radio_container">
+                            <div id="castrado" class="radio_container">
                                 <label for="" class="form_label">Castrado</label>
                                 <div class="radio_inputs">
                                     <div class="radio_box">
@@ -173,6 +178,7 @@
                                         <label for="cast_nao" class="form_label">Não</label>
                                     </div>
                                 </div>
+                                <span class="error"></span>
                             </div>
 
                             <div class="input_box">
@@ -184,6 +190,7 @@
                                         <option value="Lar Temporário">Lar Temporário</option>
                                     </select>
                                 </div>
+                                <span class="error"></span>
                             </div>
 
                             <div class="input_box">
@@ -195,9 +202,10 @@
                                         <option value="Casa do Ciclano">Casa do Ciclano</option>
                                     </select>
                                 </div>
+                                <span class="error"></span>
                             </div>
 
-                            <div class="radio_container">
+                            <div id="adocao" class="radio_container">
                                 <label for="" class="form_label">Disponivel para adoção?</label>
                                 <div class="radio_inputs">
                                     <div class="radio_box">
@@ -210,9 +218,10 @@
                                         <label for="disp_nao" class="form_label">Não</label>
                                     </div>
                                 </div>
+                                <span class="error"></span>
                             </div>
 
-                            <div class="radio_container">
+                            <div id="docil" class="radio_container">
                                 <label for="" class="form_label">O animal é docil?</label>
                                 <div class="radio_inputs">
                                     <div class="radio_box">
@@ -225,6 +234,7 @@
                                         <label for="docil_nao" class="form_label">Não</label>
                                     </div>
                                 </div>
+                                <span class="error"></span>
                             </div>
 
                             <div class="input_box col-2">
@@ -232,6 +242,7 @@
                                 <div class="input_field">
                                     <input type="text" name="origem" id="origem" class="form_control" placeholder="ex: UFC">
                                 </div>
+                                <span class="error"></span>
                             </div>
 
                             <div class="input_box col-2">

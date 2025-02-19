@@ -1,0 +1,123 @@
+.content{
+    min-height: 100vh;
+    background-image: url('/assets/img/bg.jpg');
+    background-size: cover;
+    background-position: right;
+    overflow: hidden;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    position: absolute;
+    right: 0;
+    background-color: var(--white);
+    height: 100vh;
+    width: max(40%, 600px);
+    padding: 10px;
+    border-radius: 20px 0 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.wrapper > h1{
+    font-size: 2rem;
+    font-weight: 900;
+    color: var(--orange);
+}
+
+#form_cadastro{
+    width: min(400px, 100%);
+    margin-top: 20px;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#form_cadastro > div{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#form_cadastro > div > label{
+    flex-shrink: 0;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 0 0 10px;
+    font-size: 1.5rem;
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+#form_cadastro > div > label >svg{
+    fill: var(--white);
+}
+
+#form_cadastro input{
+    
+    flex-grow: 1;
+    min-width: 0;
+    height: 50px;
+    padding: 1em;
+    font: inherit;
+    border-radius: 0 10px 10px 0;
+    border: 2px solid var(--gray2);
+    border-left: none;
+    background-color: var(--gray2);
+    transition: 150ms ease;
+}
+#form_cadastro input:hover{
+    border-color: var(--orange);
+}
+
+#form_cadastro input:focus{
+    outline: none;
+    border-color: var(--orange);
+}
+
+#form_cadastro button{
+    margin-top: 10px;
+    border: none;
+    border-radius: 1000px;
+    padding: .85em 4em;
+    background-color: var(--orange);
+    color: var(--white);
+    font: inherit;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 150ms ease;
+}
+
+#form_cadastro button:hover{
+    background-color: var(--yellow);
+}
+
+#form_cadastro button:focus{
+    outline: none;
+    background-color: var(--yellow);
+}
+
+a{
+    text-decoration: none;
+    color: var(--orange);
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+@media(max-width: 1100px){
+    .wrapper{
+        width: min(600px, 100%);
+        border-radius: 0;
+    }
+}

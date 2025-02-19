@@ -86,3 +86,122 @@ selectLocal.addEventListener('change', (event) => {
     optionsLT[0].selected = true;
   }
 });
+
+//Validar campos formulario
+const form = document.querySelector('#form');
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const fields = [
+    {
+      id: 'name',
+      label: 'Nome',
+      validator: nameIsValid,
+    },
+    {
+      id: 'origem',
+      label: 'Origem',
+      validator: nameIsValid,
+    },
+  ];
+
+  const radios = [
+    {
+      id: 'vacinado',
+      name: 'vacinado',
+    },
+    {
+      id: 'castrado',
+      name: 'castrado',
+    },
+    {
+      id: 'adocao',
+      name: 'adocao',
+    },
+    {
+      id: 'docil',
+      name: 'docil',
+    },
+  ];
+
+  const selects = {
+    
+  }
+  const errorIcon = '<i class="fa-solid fa-circle-exclamation"></i>';
+
+  radios.forEach(function (radio) {
+    const radioInput = document.getElementsByName(radio.name);
+    console.log(radio);
+    const radioContainer = document.getElementById(radio.id);
+    console.log(radioContainer);
+    const radioErrorSpan = radioContainer.querySelector('.error');
+    console.log(radioErrorSpan);
+
+    const selectedOption = [...radioInput].find((input) => input.checked);
+    radioContainer.classList.add('invalid');
+    radioContainer.classList.remove('valid');
+    radioErrorSpan.innerHTML = `${errorIcon} Selecione uma opção!`;
+
+    if (selectedOption) {
+      radioContainer.classList.add('valid');
+      radioContainer.classList.remove('invalid');
+      radioErrorSpan.innerHTML = ``;
+      return;
+    }
+  });
+
+  fields.forEach(function (field) {
+    const input = document.getElementById(field.id);
+    const inputBox = input.closest('.input_box');
+    const inputValue = input.value;
+
+    const errorSpan = inputBox.querySelector('.error');
+    errorSpan.innerHTML = '';
+
+    inputBox.classList.remove('invalid');
+    inputBox.classList.add('valid');
+
+    const fieldValidator = field.validator(inputValue);
+    console.log(fieldValidator.errorMessage);
+
+    if (!fieldValidator.isValid) {
+      errorSpan.innerHTML = `${errorIcon} ${fieldValidator.errorMessage}`;
+      inputBox.classList.add('invalid');
+      inputBox.classList.remove('valid');
+      return;
+    }
+  });
+});
+
+function isEmpty(value) {
+  return value === '';
+}
+
+function nameIsValid(value) {
+  const validator = {
+    isValid: true,
+    errorMessage: null,
+  };
+
+  if (isEmpty(value)) {
+    validator.isValid = false;
+    validator.errorMessage = 'O campo é obrigatório';
+    return validator;
+  }
+
+  const min = 3;
+
+  if (value.length < min) {
+    validator.isValid = false;
+    validator.errorMessage = `O nome deve ter no mínimo ${min} caracteres`;
+    return validator;
+  }
+
+  const regex = /^[a-zA-Z]+$/;
+  if (!regex.test(value)) {
+    validator.isValid = false;
+    validator.errorMessage = 'O nome deve conter apenas letras.';
+  }
+  return validator;
+}

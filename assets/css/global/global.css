@@ -35,7 +35,7 @@ select {
     -webkit-appearance: none !important;
     -moz-appearance: none;
     margin-right: 5px;
-    background: #fff url('/assets/img/arrowdown.svg') no-repeat right center;
+    background: #fff url('../../img/arrowdown.svg') no-repeat right center;
     background-size: 20px;
 }
 
