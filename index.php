@@ -1,5 +1,7 @@
 <?php
 
+require 'models/Usuario.php';
+
 session_start();
 
 require 'Flash.php';

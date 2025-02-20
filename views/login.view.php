@@ -7,6 +7,19 @@
                     <?= $mensagem ?>
                 </div>
             <?php endif; ?>
+
+            <div>
+                <?php if ($validacoes = flash()->get('validacoes_login')): ?>
+                    <div class="erro">
+                        <ul>
+                            <li>Erros:</li>
+                            <?php foreach ($validacoes as $validacao): ?>
+                                <li><?= $validacao ?></li>
+                            <?php endforeach; ?>
+                        </ul>
+                    </div>
+                <?php endif; ?>
+            </div>
             <div>
                 <label for="email-input">
                     <span>@</span>

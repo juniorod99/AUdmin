@@ -5,4 +5,6 @@ class Usuario
     public $nome;
     public $email;
     public $senha;
+    public $foto;
+    public $role;
 }
