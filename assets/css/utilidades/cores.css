@@ -7,4 +7,7 @@
     --black2:#999;
     --yellow:#ffc001;
     --orange: #ff4800;
+    --green-1: oklch(0.925 0.084 155.995);
+    --green-2: oklch(0.792 0.209 151.711);
+    --green-3: oklch(0.627 0.194 149.214);
 }
