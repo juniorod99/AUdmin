@@ -90,58 +90,82 @@ selectLocal.addEventListener('change', (event) => {
 //Validar campos formulario
 const form = document.querySelector('#form');
 
-form.addEventListener('submit', function (e) {
-  e.preventDefault();
-
+function validarFields() {
   const fields = [
     {
-      id: 'name',
-      label: 'Nome',
+      id: 'nome',
       validator: nameIsValid,
+    },
+    {
+      id: 'idade',
+      validator: numberIsValid,
     },
     {
       id: 'origem',
-      label: 'Origem',
       validator: nameIsValid,
     },
   ];
 
+  let errosFields = 0;
+  const errorIcon = '<i class="fa-solid fa-circle-exclamation"></i>';
+
+  fields.forEach(function (field) {
+    const input = document.getElementById(field.id);
+    console.log(input);
+    console.log('1');
+    const inputBox = input.closest('.input_box');
+    console.log(inputBox);
+    console.log('2');
+    const inputValue = input.value;
+    console.log(inputValue);
+    console.log('3');
+
+    const errorSpan = inputBox.querySelector('.error');
+    errorSpan.innerHTML = '';
+
+    inputBox.classList.remove('invalid');
+    inputBox.classList.add('valid');
+    console.log(field.validator(inputValue));
+    const fieldValidator = field.validator(inputValue);
+    // console.log(fieldValidator.errorMessage);
+
+    if (!fieldValidator.isValid) {
+      errorSpan.innerHTML = `${errorIcon} ${fieldValidator.errorMessage}`;
+      inputBox.classList.add('invalid');
+      inputBox.classList.remove('valid');
+      errosFields += 1;
+      return;
+    }
+  });
+
+  return errosFields;
+}
+
+function validarRadios() {
   const radios = [
     {
       id: 'vacinado',
-      name: 'vacinado',
     },
     {
       id: 'castrado',
-      name: 'castrado',
     },
     {
       id: 'adocao',
-      name: 'adocao',
     },
     {
       id: 'docil',
-      name: 'docil',
     },
   ];
 
-  const selects = {
-    
-  }
   const errorIcon = '<i class="fa-solid fa-circle-exclamation"></i>';
+  let errosRadios = 0;
 
   radios.forEach(function (radio) {
-    const radioInput = document.getElementsByName(radio.name);
-    console.log(radio);
+    const radioInput = document.getElementsByName(radio.id);
     const radioContainer = document.getElementById(radio.id);
-    console.log(radioContainer);
     const radioErrorSpan = radioContainer.querySelector('.error');
-    console.log(radioErrorSpan);
 
     const selectedOption = [...radioInput].find((input) => input.checked);
-    radioContainer.classList.add('invalid');
-    radioContainer.classList.remove('valid');
-    radioErrorSpan.innerHTML = `${errorIcon} Selecione uma opção!`;
 
     if (selectedOption) {
       radioContainer.classList.add('valid');
@@ -149,29 +173,26 @@ form.addEventListener('submit', function (e) {
       radioErrorSpan.innerHTML = ``;
       return;
     }
+
+    radioContainer.classList.add('invalid');
+    radioContainer.classList.remove('valid');
+    radioErrorSpan.innerHTML = `${errorIcon} Selecione uma opção!`;
+    errosRadios += 1;
   });
 
-  fields.forEach(function (field) {
-    const input = document.getElementById(field.id);
-    const inputBox = input.closest('.input_box');
-    const inputValue = input.value;
+  return errosRadios;
+}
 
-    const errorSpan = inputBox.querySelector('.error');
-    errorSpan.innerHTML = '';
-
-    inputBox.classList.remove('invalid');
-    inputBox.classList.add('valid');
-
-    const fieldValidator = field.validator(inputValue);
-    console.log(fieldValidator.errorMessage);
-
-    if (!fieldValidator.isValid) {
-      errorSpan.innerHTML = `${errorIcon} ${fieldValidator.errorMessage}`;
-      inputBox.classList.add('invalid');
-      inputBox.classList.remove('valid');
-      return;
-    }
-  });
+form.addEventListener('submit', function (e) {
+  let teste;
+  teste = validarRadios();
+  teste1 = validarFields();
+  if (teste != 0 || teste1 != 0) {
+    e.preventDefault();
+    console.log('previnido');
+  }
+  console.log(`Erros radios ${teste}`);
+  console.log(`Erros fields ${teste1}`);
 });
 
 function isEmpty(value) {
@@ -202,6 +223,26 @@ function nameIsValid(value) {
   if (!regex.test(value)) {
     validator.isValid = false;
     validator.errorMessage = 'O nome deve conter apenas letras.';
+  }
+  return validator;
+}
+
+function numberIsValid(value) {
+  const validator = {
+    isValid: true,
+    errorMessage: null,
+  };
+
+  if (isEmpty(value)) {
+    validator.isValid = false;
+    validator.errorMessage = 'O campo é obrigatório';
+    return validator;
+  }
+
+  if (value < 0) {
+    validator.isValid = false;
+    validator.errorMessage = `A idade não pode ser negativa`;
+    return validator;
   }
   return validator;
 }
