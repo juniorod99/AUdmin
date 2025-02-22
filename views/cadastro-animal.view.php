@@ -79,12 +79,12 @@ if (!auth()) {
                             <label for="vacinado" class="form_label">Vacinado</label>
                             <div class="radio_inputs">
                                 <div class="radio_box">
-                                    <input type="radio" name="vacinado" id="vac_sim" class="form_control" value="Sim">
+                                    <input type="radio" name="vacinado" id="vac_sim" class="form_control" value="1">
                                     <label for="vac_sim" class="form_label">Sim</label>
                                 </div>
 
                                 <div class="radio_box">
-                                    <input type="radio" name="vacinado" id="vac_nao" class="form_control" value="Não">
+                                    <input type="radio" name="vacinado" id="vac_nao" class="form_control" value="0">
                                     <label for="vac_nao" class="form_label">Não</label>
                                 </div>
                             </div>
@@ -95,12 +95,12 @@ if (!auth()) {
                             <label for="" class="form_label">Castrado</label>
                             <div class="radio_inputs">
                                 <div class="radio_box">
-                                    <input type="radio" name="castrado" id="cast_sim" class="form_control" value="Sim">
+                                    <input type="radio" name="castrado" id="cast_sim" class="form_control" value="1">
                                     <label for="cast_sim" class="form_label">Sim</label>
                                 </div>
 
                                 <div class="radio_box">
-                                    <input type="radio" name="castrado" id="cast_nao" class="form_control" value="Não">
+                                    <input type="radio" name="castrado" id="cast_nao" class="form_control" value="0">
                                     <label for="cast_nao" class="form_label">Não</label>
                                 </div>
                             </div>
@@ -135,12 +135,12 @@ if (!auth()) {
                             <label for="" class="form_label">Disponivel para adoção?</label>
                             <div class="radio_inputs">
                                 <div class="radio_box">
-                                    <input type="radio" name="adocao" id="disp_sim" class="form_control" value="Sim">
+                                    <input type="radio" name="adocao" id="disp_sim" class="form_control" value="1">
                                     <label for="disp_sim" class="form_label">Sim</label>
                                 </div>
 
                                 <div class="radio_box">
-                                    <input type="radio" name="adocao" id="disp_nao" class="form_control" value="Não">
+                                    <input type="radio" name="adocao" id="disp_nao" class="form_control" value="0">
                                     <label for="disp_nao" class="form_label">Não</label>
                                 </div>
                             </div>
@@ -151,12 +151,12 @@ if (!auth()) {
                             <label for="" class="form_label">O animal é docil?</label>
                             <div class="radio_inputs">
                                 <div class="radio_box">
-                                    <input type="radio" name="docil" id="docil_sim" class="form_control" value="Sim">
+                                    <input type="radio" name="docil" id="docil_sim" class="form_control" value="1">
                                     <label for="docil_sim" class="form_label">Sim</label>
                                 </div>
 
                                 <div class="radio_box">
-                                    <input type="radio" name="docil" id="docil_nao" class="form_control" value="Não">
+                                    <input type="radio" name="docil" id="docil_nao" class="form_control" value="0">
                                     <label for="docil_nao" class="form_label">Não</label>
                                 </div>
                             </div>
