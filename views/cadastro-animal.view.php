@@ -31,10 +31,10 @@ if (!auth()) {
                                 <div class="input_field">
                                     <select class="form_control" name="faixa" id="faixa">
                                         <option selected disabled>Selecione uma faixa etária</option>
-                                        <option value="filhote">Filhote</option>
-                                        <option value="jovem">Jovem</option>
-                                        <option value="adulto">Adulto</option>
-                                        <option value="idoso">Idoso</option>
+                                        <option value="Filhote">Filhote</option>
+                                        <option value="Jovem">Jovem</option>
+                                        <option value="Adulto">Adulto</option>
+                                        <option value="Idoso">Idoso</option>
                                     </select>
                                 </div>
                                 <span class="error"></span>

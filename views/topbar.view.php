@@ -11,7 +11,7 @@
     <div class="user_info">
         <div class="user">
             <?php if (is_null(auth()->foto)): ?>
-                <img src="./assets/img/momo.jpeg" alt="">
+                <img src="./assets/img/profile.png" alt="">
             <?php else: ?>
                 <img src="./assets/<?= auth()->foto ?>" alt="">
             <?php endif; ?>

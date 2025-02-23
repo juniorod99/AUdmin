@@ -77,8 +77,8 @@ if (!auth()) {
         <div class="details">
             <div class="recentOrders">
                 <div class="titleHeader">
-                    <h2>Animais Resgatados</h2>
-                    <a href="#" class="btn">Ver todos</a>
+                    <h2>Animais</h2>
+                    <a href="/animais" class="btn">Ver todos</a>
                 </div>
 
                 <table>
@@ -93,114 +93,35 @@ if (!auth()) {
                     </thead>
 
                     <tbody>
-                        <tr>
-                            <td>
-                                <div class="imgBox">
-                                    <img src="../assets/img/ken.jpeg">
-                                </div>
-                            </td>
-                            <td>Diego</td>
-                            <td>Gato</td>
-                            <td>✅</td>
-                            <td><span class="status delivered">Disponivel</span></td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <div class="imgBox">
-                                    <img src="../assets/img/ken.jpeg">
-                                </div>
-                            </td>
-                            <td>Pandora</td>
-                            <td>Gato</td>
-                            <td>❌</td>
-                            <td><span class="status pending">Pending</span></td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <div class="imgBox">
-                                    <img src="../assets/img/ken.jpeg">
-                                </div>
-                            </td>
-                            <td>Maria</td>
-                            <td>Cachorro</td>
-                            <td>❌</td>
-                            <td><span class="status return">Indisponivel</span></td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <div class="imgBox">
-                                    <img src="../assets/img/ken.jpeg">
-                                </div>
-                            </td>
-                            <td>Simba</td>
-                            <td>Gato</td>
-                            <td>✅</td>
-                            <td><span class="status inProgress">Adotado</span></td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <div class="imgBox">
-                                    <img src="../assets/img/ken.jpeg">
-                                </div>
-                            </td>
-                            <td>Granola</td>
-                            <td>Gato</td>
-                            <td>✅</td>
-                            <td><span class="status inProgress">Adotado</span></td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <div class="imgBox">
-                                    <img src="../assets/img/ken.jpeg">
-                                </div>
-                            </td>
-                            <td>Aveia</td>
-                            <td>Gato</td>
-                            <td>❌</td>
-                            <td><span class="status inProgress">Adotado</span></td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <div class="imgBox">
-                                    <img src="../assets/img/ken.jpeg">
-                                </div>
-                            </td>
-                            <td>Zeus</td>
-                            <td>Cachorro</td>
-                            <td>❌</td>
-                            <td><span class="status inProgress">Adotado</span></td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <div class="imgBox">
-                                    <img src="../assets/img/ken.jpeg">
-                                </div>
-                            </td>
-                            <td>Nathanzin</td>
-                            <td>Gato</td>
-                            <td>✅</td>
-                            <td><span class="status inProgress">Adotado</span></td>
-                        </tr>
-
-                        <tr>
-                            <td>
-                                <div class="imgBox">
-                                    <img src="../assets/img/ken.jpeg">
-                                </div>
-                            </td>
-                            <td>Bart</td>
-                            <td>Cachorro</td>
-                            <td>❌</td>
-                            <td><span class="status inProgress">Adotado</span></td>
-                        </tr>
-
+                        <?php foreach ($animais as $animal): ?>
+                            <tr>
+                                <td>
+                                    <div class="imgBox">
+                                        <?php if (!is_null($animal->foto)): ?>
+                                            <img src="../assets/img/<?= $animal->foto ?>">
+                                        <?php else: ?>
+                                            <img src="../assets/img/animais/icon.png">
+                                        <?php endif; ?>
+                                    </div>
+                                </td>
+                                <td><?= $animal->nome ?></td>
+                                <td><?= $animal->especie ?></td>
+                                <td>
+                                    <?php if ($animal->castrado == 1): ?>
+                                        ✅
+                                    <?php else: ?>
+                                        ❌
+                                    <?php endif; ?>
+                                </td>
+                                <td>
+                                    <?php if ($animal->disp_adocao == 1): ?>
+                                        <span class="status delivered">Disponivel</span>
+                                    <?php elseif ($animal->disp_adocao == 0): ?>
+                                        <span class="status return">Indisponivel</span>
+                                    <?php endif; ?>
+                                </td>
+                            </tr>
+                        <?php endforeach; ?>
                     </tbody>
                 </table>
             </div>

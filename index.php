@@ -1,6 +1,7 @@
 <?php
 
 require 'models/Usuario.php';
+require 'models/Animal.php';
 
 session_start();
 

@@ -12,6 +12,10 @@
     gap: 30px;
 }
 
+.details.animais{
+    grid-template-columns: none;
+}
+
 .recentOrders{
     position: relative;
     display: grid;
@@ -87,21 +91,24 @@
     padding: 10px;
 }
 
-.details .recentOrders table tr td:last-child{
-    text-align: end;
-}
-
 .details .recentOrders table tr td:nth-child(2){
     text-align: start;
 }
 
-.details .recentOrders table tr td:nth-child(3){
+.details .recentOrders table tr td:nth-child(3),
+.details .recentOrders table tr td:nth-child(4),
+.details .recentOrders table tr td:nth-child(5),
+.details .recentOrders table tr td:nth-child(6),
+.details .recentOrders table tr td:nth-child(7){
     text-align: center;
+}
+.details .recentOrders table tr td:last-child{
+    text-align: end;
 }
 
-.details .recentOrders table tr td:nth-child(4){
+/* .details .recentOrders table tr td:nth-child(4){
     text-align: center;
-}
+} */
 
 .status.delivered{
     padding: 2px 4px;
