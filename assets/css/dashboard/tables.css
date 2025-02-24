@@ -29,7 +29,7 @@
 .titleHeader{
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
 }
 
 .titleHeader h2{
@@ -38,12 +38,20 @@
 }
 
 .titleHeader .btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
     position: relative;
     padding: 5px 10px;
     background: var(--orange);
     text-decoration: none;
     color: var(--white);
     border-radius: 6px;
+}
+
+.titleHeader .btn ion-icon{
+    font-size: 1.2rem;
 }
 
 .details table{
@@ -83,8 +91,8 @@
 }
 
 .details .recentOrders table tbody tr:hover{
-    background: var(--orange);
-    color: var(--white);
+    background: var(--yellow);
+    /* color: var(--white); */
 }
 
 .details .recentOrders table tr td{
@@ -189,13 +197,13 @@
 }
 
 .recentCustomers table tr:hover{
-    background: var(--orange);
-    color: var(--white);
+    background: var(--yellow);
+    /* color: var(--white); */
 }
 
-.recentCustomers table tr:hover td h4 span{
+/* .recentCustomers table tr:hover td h4 span{
     color: var(--white);
-}
+} */
 
 @media(max-width: 768px){
     .details{

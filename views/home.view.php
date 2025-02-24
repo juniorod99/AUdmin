@@ -15,7 +15,7 @@ if (!auth()) {
             <div class="card">
                 <div>
                     <div class="numbers">1,504</div>
-                    <div class="cardName">Resgates</div>
+                    <div class="cardName">Animais atendidos</div>
                 </div>
 
                 <div class="iconBox">
@@ -87,8 +87,8 @@ if (!auth()) {
                             <td></td>
                             <td>Nome</td>
                             <td>Espécie</td>
-                            <td>Castração</td>
-                            <td>Disponivel</td>
+                            <td>Castrado</td>
+                            <td>Situação</td>
                         </tr>
                     </thead>
 
@@ -135,90 +135,90 @@ if (!auth()) {
                 <table>
                     <tr>
                         <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/momo.jpeg" alt="">
+                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
                             </div>
                         </td>
                         <td>
-                            <h4>Momo <br> <span>Italy</span></h4>
+                            <h4>João <br> <span>Passaré</span></h4>
                         </td>
                     </tr>
 
                     <tr>
                         <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/ken.jpeg" alt="">
+                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
                             </div>
                         </td>
                         <td>
-                            <h4>Ken <br> <span>Japan</span></h4>
+                            <h4>Pedro <br> <span>Dionisio Torres</span></h4>
                         </td>
                     </tr>
 
                     <tr>
                         <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/momo.jpeg" alt="">
+                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
                             </div>
                         </td>
                         <td>
-                            <h4>Momo <br> <span>Italy</span></h4>
+                            <h4>Maria <br> <span>Edson Queiroz</span></h4>
                         </td>
                     </tr>
                     <tr>
                         <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/momo.jpeg" alt="">
+                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
                             </div>
                         </td>
                         <td>
-                            <h4>Momo <br> <span>Italy</span></h4>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/ken.jpeg" alt="">
-                            </div>
-                        </td>
-                        <td>
-                            <h4>Ken <br> <span>Japan</span></h4>
+                            <h4>Aline <br> <span>Jangurussu</span></h4>
                         </td>
                     </tr>
 
                     <tr>
                         <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/momo.jpeg" alt="">
+                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
                             </div>
                         </td>
                         <td>
-                            <h4>Momo <br> <span>Italy</span></h4>
+                            <h4>Gabriel <br> <span>Parquelândia</span></h4>
                         </td>
                     </tr>
 
                     <tr>
                         <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/ken.jpeg" alt="">
+                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
                             </div>
                         </td>
                         <td>
-                            <h4>Ken <br> <span>Japan</span></h4>
+                            <h4>Milton <br> <span>Eusébio</span></h4>
                         </td>
                     </tr>
 
                     <tr>
                         <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/momo.jpeg" alt="">
+                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
                             </div>
                         </td>
                         <td>
-                            <h4>Momo <br> <span>Italy</span></h4>
+                            <h4>Vitória <br> <span>Messejana</span></h4>
                         </td>
                     </tr>
 
                     <tr>
                         <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/ken.jpeg" alt="">
+                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
                             </div>
                         </td>
                         <td>
-                            <h4>Ken <br> <span>Japan</span></h4>
+                            <h4>Anderson <br> <span>Meireles</span></h4>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td width="60px">
+                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
+                            </div>
+                        </td>
+                        <td>
+                            <h4>Amelia <br> <span>Aldeota</span></h4>
                         </td>
                     </tr>
                 </table>

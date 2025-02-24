@@ -15,6 +15,9 @@ if (!auth()) {
             <div class="recentOrders">
                 <div class="titleHeader">
                     <h2>Animais</h2>
+                    <div class="btn_cadastrar">
+                        <a href="/cadastro-animal" class="btn"><ion-icon name="add-outline"></ion-icon><span>Cadastrar animal</span></a>
+                    </div>
                 </div>
 
                 <table>
@@ -25,9 +28,9 @@ if (!auth()) {
                             <td>Espécie</td>
                             <td>Idade</td>
                             <td>Sexo</td>
-                            <td>Castração</td>
+                            <td>Castrado</td>
                             <td>Local</td>
-                            <td>Disponivel</td>
+                            <td>Situação</td>
                         </tr>
                     </thead>
 
