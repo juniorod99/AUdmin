@@ -48,6 +48,7 @@ if (!auth()) {
                                     <img src="./assets/img/photo1.png" id="cover" alt="">
                                 </div>
                             </label>
+                            <span class="error"></span>
                         </div>
 
 

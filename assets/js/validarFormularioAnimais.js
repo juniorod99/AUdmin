@@ -17,10 +17,25 @@ selectLocal.addEventListener('change', (event) => {
 
 //Validar campos formulario
 const form = document.querySelector('#form');
+
 form.addEventListener('submit', function (e) {
   let errosRadios = validarRadios();
   let errosFields = validarFields();
   let errosSelects = validarSelects();
+
+  const fileInput = document.getElementById('file');
+  const fileBox = fileInput.closest('.input_box');
+  const errorSpan = fileBox.querySelector('.error');
+  errorSpan.innerHTML = '';
+  let arquivo = fileInput.files[0];
+
+  if (arquivo) {
+    const tamanhoMaximo = 2 * 1024 * 1024;
+    if (arquivo.size > tamanhoMaximo) {
+      errorSpan.innerHTML = `O arquivo não pode ter mais que 2MB.`;
+      e.preventDefault();
+    }
+  }
 
   if (errosRadios === 0 && errosFields === 0 && errosSelects === 0) {
     return true;
@@ -32,6 +47,27 @@ form.addEventListener('submit', function (e) {
   console.log(`Erros fields ${errosFields}`);
   console.log(`Erros selects ${errosSelects}`);
 });
+
+function validarFiles() {
+  const fileInput = document.getElementById('file');
+  const fileBox = fileInput.closest('.input_box');
+  const errorSpan = fileBox.querySelector('.error');
+  errorSpan.innerHTML = '';
+
+  fileInput.addEventListener('change', function (e) {
+    const file = e.target.files[0];
+    errorSpan.innerHTML = '';
+    arquivoValido = true;
+    if (file) {
+      const tamanhoMaximo = 2 * 1024 * 1024;
+      if (file.size > tamanhoMaximo) {
+        errorSpan.innerHTML = `O arquivo não pode ter mais que 2MB.`;
+        arquivoValido = false;
+        form.addEventListener('submit', stopSubmit);
+      }
+    }
+  });
+}
 
 function validarFields() {
   const fields = [
@@ -46,7 +82,6 @@ function validarFields() {
   ];
 
   let errosFields = 0;
-  const errorIcon = '<i class="fa-solid fa-circle-exclamation"></i>';
 
   fields.forEach(function (field) {
     const input = document.getElementById(field.id);
@@ -61,7 +96,7 @@ function validarFields() {
     const fieldValidator = field.validator(inputValue);
 
     if (!fieldValidator.isValid) {
-      errorSpan.innerHTML = `${errorIcon} ${fieldValidator.errorMessage}`;
+      errorSpan.innerHTML = `${fieldValidator.errorMessage}`;
       inputBox.classList.add('invalid');
       inputBox.classList.remove('valid');
       errosFields += 1;
@@ -88,7 +123,6 @@ function validarRadios() {
     },
   ];
 
-  const errorIcon = '<i class="fa-solid fa-circle-exclamation"></i>';
   let errosRadios = 0;
 
   radios.forEach(function (radio) {
@@ -107,7 +141,7 @@ function validarRadios() {
 
     radioContainer.classList.add('invalid');
     radioContainer.classList.remove('valid');
-    radioErrorSpan.innerHTML = `${errorIcon} Selecione uma opção!`;
+    radioErrorSpan.innerHTML = `Selecione uma opção!`;
     errosRadios += 1;
   });
 
@@ -134,7 +168,6 @@ function validarSelects() {
   ];
 
   let errosSelects = 0;
-  const errorIcon = '<i class="fa-solid fa-circle-exclamation"></i>';
 
   selects.forEach(function (select) {
     const selectField = document.getElementById(select.id);
@@ -142,12 +175,11 @@ function validarSelects() {
     const errorSpan = selectBox.querySelector('.error');
 
     if (selectField.disabled) {
-      console.log('O campo LT está desabilitado.');
       return;
     }
 
     if (selectField.selectedIndex === 0) {
-      errorSpan.innerHTML = `${errorIcon} Selecione uma opção!`;
+      errorSpan.innerHTML = `Selecione uma opção!`;
       selectBox.classList.add('invalid');
       selectBox.classList.remove('valid');
       errosSelects += 1;
@@ -213,3 +245,5 @@ function numberIsValid(value) {
   }
   return validator;
 }
+
+validarFiles();
