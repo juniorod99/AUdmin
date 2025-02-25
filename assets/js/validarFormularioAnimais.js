@@ -22,19 +22,10 @@ form.addEventListener('submit', function (e) {
   let errosRadios = validarRadios();
   let errosFields = validarFields();
   let errosSelects = validarSelects();
+  let validarImagem = validarFoto();
 
-  const fileInput = document.getElementById('file');
-  const fileBox = fileInput.closest('.input_box');
-  const errorSpan = fileBox.querySelector('.error');
-  errorSpan.innerHTML = '';
-  let arquivo = fileInput.files[0];
-
-  if (arquivo) {
-    const tamanhoMaximo = 2 * 1024 * 1024;
-    if (arquivo.size > tamanhoMaximo) {
-      errorSpan.innerHTML = `O arquivo não pode ter mais que 2MB.`;
-      e.preventDefault();
-    }
+  if (!validarImagem) {
+    e.preventDefault();
   }
 
   if (errosRadios === 0 && errosFields === 0 && errosSelects === 0) {
@@ -46,7 +37,22 @@ form.addEventListener('submit', function (e) {
   console.log(`Erros radios ${errosRadios}`);
   console.log(`Erros fields ${errosFields}`);
   console.log(`Erros selects ${errosSelects}`);
+  console.log(validarImagem);
 });
+
+function validarFoto() {
+  let imagemValida = true;
+  const fileInput = document.getElementById('file');
+  let arquivo = fileInput.files[0];
+
+  if (arquivo) {
+    const tamanhoMaximo = 2 * 1024 * 1024;
+    if (arquivo.size > tamanhoMaximo) {
+      imagemValida = false;
+    }
+  }
+  return imagemValida;
+}
 
 function validarFiles() {
   const fileInput = document.getElementById('file');
@@ -57,13 +63,10 @@ function validarFiles() {
   fileInput.addEventListener('change', function (e) {
     const file = e.target.files[0];
     errorSpan.innerHTML = '';
-    arquivoValido = true;
     if (file) {
       const tamanhoMaximo = 2 * 1024 * 1024;
       if (file.size > tamanhoMaximo) {
         errorSpan.innerHTML = `O arquivo não pode ter mais que 2MB.`;
-        arquivoValido = false;
-        form.addEventListener('submit', stopSubmit);
       }
     }
   });
