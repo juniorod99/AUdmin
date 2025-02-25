@@ -69,20 +69,3 @@ input.addEventListener('change', (event) => {
     dropzone.appendChild(img);
   }
 });
-
-//Disable Select
-const selectLocal = document.querySelector('#local');
-const selectLT = document.querySelector('#lt');
-const optionsLT = selectLT.options;
-
-selectLocal.addEventListener('change', (event) => {
-  const selectedOption =
-    selectLocal.options[selectLocal.selectedIndex].innerHTML;
-
-  if (selectedOption === 'Lar Temporário') {
-    selectLT.removeAttribute('disabled');
-  } else {
-    selectLT.setAttribute('disabled', true);
-    optionsLT[0].selected = true;
-  }
-});

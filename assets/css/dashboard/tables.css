@@ -156,7 +156,7 @@
 
 .recentCustomers{
     position: relative;
-    display: grid;
+    /* display: grid; */
     min-height: 500px;
     padding: 20px;
     background: var(--white);

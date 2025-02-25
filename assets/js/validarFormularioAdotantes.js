@@ -1,34 +1,16 @@
-//Disable Select
-const selectLocal = document.querySelector('#local');
-const selectLT = document.querySelector('#lt');
-const optionsLT = selectLT.options;
-
-selectLocal.addEventListener('change', (event) => {
-  const selectedOption =
-    selectLocal.options[selectLocal.selectedIndex].innerHTML;
-
-  if (selectedOption === 'Lar Temporário') {
-    selectLT.removeAttribute('disabled');
-  } else {
-    selectLT.setAttribute('disabled', true);
-    optionsLT[0].selected = true;
-  }
-});
-
 //Validar campos formulario
 const form = document.querySelector('#form');
+
 form.addEventListener('submit', function (e) {
-  let errosRadios = validarRadios();
   let errosFields = validarFields();
   let errosSelects = validarSelects();
 
-  if (errosRadios === 0 && errosFields === 0 && errosSelects === 0) {
+  if (errosFields === 0 && errosSelects === 0) {
     return true;
   } else {
     e.preventDefault();
     console.log('previnido');
   }
-  console.log(`Erros radios ${errosRadios}`);
   console.log(`Erros fields ${errosFields}`);
   console.log(`Erros selects ${errosSelects}`);
 });
@@ -72,64 +54,10 @@ function validarFields() {
   return errosFields;
 }
 
-function validarRadios() {
-  const radios = [
-    {
-      id: 'vacinado',
-    },
-    {
-      id: 'castrado',
-    },
-    {
-      id: 'adocao',
-    },
-    {
-      id: 'docil',
-    },
-  ];
-
-  const errorIcon = '<i class="fa-solid fa-circle-exclamation"></i>';
-  let errosRadios = 0;
-
-  radios.forEach(function (radio) {
-    const radioInput = document.getElementsByName(radio.id);
-    const radioContainer = document.getElementById(radio.id);
-    const radioErrorSpan = radioContainer.querySelector('.error');
-
-    const selectedOption = [...radioInput].find((input) => input.checked);
-
-    if (selectedOption) {
-      radioContainer.classList.add('valid');
-      radioContainer.classList.remove('invalid');
-      radioErrorSpan.innerHTML = ``;
-      return;
-    }
-
-    radioContainer.classList.add('invalid');
-    radioContainer.classList.remove('valid');
-    radioErrorSpan.innerHTML = `${errorIcon} Selecione uma opção!`;
-    errosRadios += 1;
-  });
-
-  return errosRadios;
-}
-
 function validarSelects() {
   const selects = [
     {
-      id: 'faixa',
-    },
-    {
-      id: 'especie',
-    },
-    {
-      id: 'sexo',
-    },
-    {
-      id: 'local',
-    },
-    {
-      id: 'lt',
+      id: 'idade',
     },
   ];
 
@@ -140,11 +68,6 @@ function validarSelects() {
     const selectField = document.getElementById(select.id);
     const selectBox = selectField.closest('.input_box');
     const errorSpan = selectBox.querySelector('.error');
-
-    if (selectField.disabled) {
-      console.log('O campo LT está desabilitado.');
-      return;
-    }
 
     if (selectField.selectedIndex === 0) {
       errorSpan.innerHTML = `${errorIcon} Selecione uma opção!`;
