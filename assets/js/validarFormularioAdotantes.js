@@ -4,6 +4,14 @@ const form = document.querySelector('#form');
 form.addEventListener('submit', function (e) {
   let errosFields = validarFields();
   let errosSelects = validarSelects();
+  let validarImagem = validarFoto();
+  let validarDoc = validarDocumento();
+
+  if (!validarImagem || !validarDoc) {
+    e.preventDefault();
+    console.log('algo esta errado');
+    return;
+  }
 
   if (errosFields === 0 && errosSelects === 0) {
     return true;
@@ -15,6 +23,34 @@ form.addEventListener('submit', function (e) {
   console.log(`Erros selects ${errosSelects}`);
 });
 
+function validarFoto() {
+  let imagemValida = true;
+  const fileInput = document.getElementById('file');
+  let arquivo = fileInput.files[0];
+
+  if (arquivo) {
+    const tamanhoMaximo = 2 * 1024 * 1024;
+    if (arquivo.size > tamanhoMaximo) {
+      imagemValida = false;
+    }
+  }
+  return imagemValida;
+}
+
+function validarDocumento() {
+  let documentoValido = true;
+  const fileInput = document.getElementById('documentos');
+  let arquivo = fileInput.files[0];
+
+  if (arquivo) {
+    const tamanhoMaximo = 2 * 1024 * 1024;
+    if (arquivo.size > tamanhoMaximo) {
+      documentoValido = false;
+    }
+  }
+  return documentoValido;
+}
+
 function validarFields() {
   const fields = [
     {
@@ -22,13 +58,32 @@ function validarFields() {
       validator: nameIsValid,
     },
     {
-      id: 'origem',
+      id: 'idade',
+      validator: numberIsValid,
+    },
+    {
+      id: 'rede',
+      validator: nameIsValid,
+    },
+    {
+      id: 'bairro',
+      validator: nameIsValid,
+    },
+    {
+      id: 'rua',
+      validator: nameIsValid,
+    },
+    {
+      id: 'telefone',
+      validator: nameIsValid,
+    },
+    {
+      id: 'email',
       validator: nameIsValid,
     },
   ];
 
   let errosFields = 0;
-  const errorIcon = '<i class="fa-solid fa-circle-exclamation"></i>';
 
   fields.forEach(function (field) {
     const input = document.getElementById(field.id);
@@ -43,7 +98,7 @@ function validarFields() {
     const fieldValidator = field.validator(inputValue);
 
     if (!fieldValidator.isValid) {
-      errorSpan.innerHTML = `${errorIcon} ${fieldValidator.errorMessage}`;
+      errorSpan.innerHTML = `${fieldValidator.errorMessage}`;
       inputBox.classList.add('invalid');
       inputBox.classList.remove('valid');
       errosFields += 1;
@@ -57,12 +112,11 @@ function validarFields() {
 function validarSelects() {
   const selects = [
     {
-      id: 'idade',
+      id: 'sexo',
     },
   ];
 
   let errosSelects = 0;
-  const errorIcon = '<i class="fa-solid fa-circle-exclamation"></i>';
 
   selects.forEach(function (select) {
     const selectField = document.getElementById(select.id);
@@ -70,7 +124,7 @@ function validarSelects() {
     const errorSpan = selectBox.querySelector('.error');
 
     if (selectField.selectedIndex === 0) {
-      errorSpan.innerHTML = `${errorIcon} Selecione uma opção!`;
+      errorSpan.innerHTML = `Selecione uma opção!`;
       selectBox.classList.add('invalid');
       selectBox.classList.remove('valid');
       errosSelects += 1;
@@ -136,3 +190,34 @@ function numberIsValid(value) {
   }
   return validator;
 }
+
+function validarFiles() {
+  const files = [
+    {
+      id: 'file',
+    },
+    {
+      id: 'documentos',
+    },
+  ];
+
+  files.forEach(function (file) {
+    const fileInput = document.getElementById(file.id);
+    const fileBox = fileInput.closest('.input_box');
+    const errorSpan = fileBox.querySelector('.error');
+    errorSpan.innerHTML = '';
+
+    fileInput.addEventListener('change', function (e) {
+      const file = e.target.files[0];
+      errorSpan.innerHTML = '';
+      if (file) {
+        const tamanhoMaximo = 2 * 1024 * 1024;
+        if (file.size > tamanhoMaximo) {
+          errorSpan.innerHTML = `O arquivo não pode ter mais que 2MB.`;
+        }
+      }
+    });
+  });
+}
+
+validarFiles();

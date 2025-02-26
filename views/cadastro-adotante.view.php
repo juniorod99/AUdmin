@@ -42,6 +42,7 @@ if (!auth()) {
                                     <img src="./assets/img/photo1.png" id="cover" alt="">
                                 </div>
                             </label>
+                            <span class="error"></span>
                         </div>
 
                         <div class="input_box">
@@ -108,6 +109,7 @@ if (!auth()) {
                             <div class="input_field">
                                 <input type="file" class="form_control" name="documentos" id="documentos" cols="30" rows="5">
                             </div>
+                            <span class="error"></span>
                         </div>
 
                     </div>
