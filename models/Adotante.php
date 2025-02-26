@@ -13,4 +13,35 @@ class Adotante
     public $observacao;
     public $foto;
     public $documentos;
+
+    public function query($where, $params)
+    {
+        $database = new Database(config('database'));
+        return $database->query("
+            select
+                a.id,
+                a.nome,
+                a.sexo,
+                a.idade,
+                a.bairro,
+                a.rua,
+                a.telefone,
+                a.email,
+                a.rede_social,
+                a.observacao,
+                a.foto,
+                a.documentos
+            from
+                adotantes a
+            where
+                $where  
+            ", self::class, $params);
+    }
+
+    public static function get($id) {}
+
+    public static function all($filtro = '')
+    {
+        return (new self)->query('nome like :filtro', ['filtro' => "%$filtro%"])->fetchAll();
+    }
 }

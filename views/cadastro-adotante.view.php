@@ -50,8 +50,8 @@ if (!auth()) {
                             <div class="input_field">
                                 <select class="form_control" name="sexo" id="sexo">
                                     <option value="" disabled selected>Selecione o sexo</option>
-                                    <option value="Macho">Masculino</option>
-                                    <option value="Fêmea">Feminino</option>
+                                    <option value="Masculino">Masculino</option>
+                                    <option value="Feminino">Feminino</option>
                                 </select>
                             </div>
                             <span class="error"></span>

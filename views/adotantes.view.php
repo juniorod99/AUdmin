@@ -14,7 +14,7 @@ if (!auth()) {
         <div class="details animais">
             <div class="recentOrders">
                 <div class="titleHeader">
-                    <h2>Animais</h2>
+                    <h2>Adotantes</h2>
                     <div class="btn_cadastrar">
                         <a href="/cadastro-adotante" class="btn"><ion-icon name="add-outline"></ion-icon><span>Cadastrar adotante</span></a>
                     </div>

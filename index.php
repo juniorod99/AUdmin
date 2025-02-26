@@ -2,6 +2,7 @@
 
 require 'models/Usuario.php';
 require 'models/Animal.php';
+require 'models/Adotante.php';
 
 session_start();
 
