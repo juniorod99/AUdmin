@@ -77,10 +77,10 @@ function validarFields() {
       id: 'telefone',
       validator: nameIsValid,
     },
-    {
-      id: 'email',
-      validator: nameIsValid,
-    },
+    // {
+    //   id: 'email',
+    //   validator: nameIsValid,
+    // },
   ];
 
   let errosFields = 0;
