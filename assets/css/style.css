@@ -9,7 +9,8 @@
 @import "./dashboard/tables.css";
 
 /* Cadastro */
-@import "./cadastro/cadastro.css";
+@import "./telas/cadastro.css";
+@import "./telas/visualizar.css";
 
 
 /* Login */

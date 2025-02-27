@@ -90,10 +90,10 @@
     border-bottom: none;
 }
 
-.details .recentOrders table tbody tr:hover{
+/* .details .recentOrders table tbody tr:hover{
     background: var(--yellow);
-    /* color: var(--white); */
-}
+    color: var(--white);
+} */
 
 .details .recentOrders table tr td{
     padding: 10px;
@@ -112,6 +112,27 @@
 }
 .details .recentOrders table tr td:last-child{
     text-align: end;
+}
+
+.details .recentOrders table .table_options{
+    text-wrap-mode:nowrap;
+}
+
+.details .recentOrders table .table_options a{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    color: var(--black1);
+    font-size: 1.2rem;
+    padding: 10px;
+    background-color: var(--yellow);
+    border-radius: 50px;
+}
+
+.details .recentOrders table .table_options a ion-icon{
+    width: 20px;
+    height: 20px;
 }
 
 /* .details .recentOrders table tr td:nth-child(4){

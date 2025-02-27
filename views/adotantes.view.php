@@ -29,6 +29,7 @@ if (!auth()) {
                             <td>Idade</td>
                             <td>Telefone</td>
                             <td>Email</td>
+                            <td>Ações</td>
                         </tr>
                     </thead>
 
@@ -44,11 +45,16 @@ if (!auth()) {
                                         <?php endif; ?>
                                     </div>
                                 </td>
-                                <td><?= $adotante->nome ?></td>
+                                <td><?= formatarNome($adotante->nome) ?></td>
                                 <td><?= $adotante->sexo ?></td>
                                 <td><?= $adotante->idade ?></td>
                                 <td><?= $adotante->telefone ?></td>
                                 <td><?= $adotante->email ?></td>
+                                <td class="table_options">
+                                    <a href="visualizar-adotante?id=<?= $adotante->id ?>"><ion-icon name="document"></ion-icon></a>
+                                    <a href="editar-adotante?id=<?= $adotante->id ?>"><ion-icon name="create"></ion-icon></a>
+                                    <a href="deletar-adotante?id=<?= $adotante->id ?>"><ion-icon name="trash"></ion-icon></a>
+                                </td>
                             </tr>
                         <?php endforeach; ?>
                     </tbody>

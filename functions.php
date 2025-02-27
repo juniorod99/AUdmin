@@ -47,3 +47,14 @@ function auth()
 
     return $_SESSION['auth'];
 }
+
+function formatarNome($nome)
+{
+    $partes = explode(" ", trim($nome));
+
+    if (count($partes) > 1) {
+        return $partes[0] . " " . end($partes);
+    }
+
+    return $partes[0];
+}
