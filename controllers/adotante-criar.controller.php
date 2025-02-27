@@ -24,9 +24,8 @@ if (isset($_FILES['documentos']) && $_FILES['documentos']['error'] === UPLOAD_ER
 
 $img = !empty($imagem) ? $imagem : null;
 $doc = !empty($documento) ? $documento : null;
+$rede = !empty($_POST['rede']) ? $_POST['rede'] : null;
 $observacao = !empty($_POST['observacoes']) ? $_POST['observacoes'] : null;
-
-// dd($imagem, $documento, $_POST);
 
 $database->query(
     "insert into adotantes (nome, sexo, idade, bairro, rua, telefone, email, rede_social, observacao, foto, documentos)
@@ -39,7 +38,7 @@ $database->query(
         'rua' => $_POST['rua'],
         'telefone' => $_POST['telefone'],
         'email' => $_POST['email'],
-        'rede_social' => $_POST['rede'],
+        'rede_social' => $rede,
         'observacao' => $observacao,
         'foto' => $img,
         'documentos' => $doc,

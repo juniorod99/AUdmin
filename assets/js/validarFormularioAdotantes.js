@@ -61,26 +61,26 @@ function validarFields() {
       id: 'idade',
       validator: numberIsValid,
     },
-    {
-      id: 'rede',
-      validator: nameIsValid,
-    },
+    // {
+    //   id: 'rede',
+    //   validator: nameIsValid,
+    // },
     {
       id: 'bairro',
       validator: nameIsValid,
     },
     {
       id: 'rua',
-      validator: nameIsValid,
+      validator: addressIsValid,
     },
     {
       id: 'telefone',
-      validator: nameIsValid,
+      validator: telIsValid,
     },
-    // {
-    //   id: 'email',
-    //   validator: nameIsValid,
-    // },
+    {
+      id: 'email',
+      validator: emailIsValid,
+    },
   ];
 
   let errosFields = 0;
@@ -163,7 +163,7 @@ function nameIsValid(value) {
     return validator;
   }
 
-  const regex = /^[a-zA-Z]+$/;
+  const regex = /^[A-Za-zÀ-ÿ\s]+$/;
   if (!regex.test(value)) {
     validator.isValid = false;
     validator.errorMessage = 'O nome deve conter apenas letras.';
@@ -188,6 +188,72 @@ function numberIsValid(value) {
     validator.errorMessage = `A idade não pode ser negativa`;
     return validator;
   }
+  return validator;
+}
+
+function addressIsValid(value) {
+  const validator = {
+    isValid: true,
+    errorMessage: null,
+  };
+
+  if (isEmpty(value)) {
+    validator.isValid = false;
+    validator.errorMessage = 'O campo é obrigatório';
+    return validator;
+  }
+
+  const regex = /^[A-Za-zÀ-ÿ\s]+(,\s*\d+)?$/;
+  if (!regex.test(value)) {
+    validator.isValid = false;
+    validator.errorMessage = 'O endereço deve ser válido.';
+    return validator;
+  }
+
+  return validator;
+}
+
+function telIsValid(value) {
+  const validator = {
+    isValid: true,
+    errorMessage: null,
+  };
+
+  if (isEmpty(value)) {
+    validator.isValid = false;
+    validator.errorMessage = 'O campo é obrigatório';
+    return validator;
+  }
+
+  const regex = /^(\(\d{2}\)|\d{2})\s?9\d{4}-?\d{4}$/;
+  if (!regex.test(value)) {
+    validator.isValid = false;
+    validator.errorMessage = 'O telefone deve ser válido.';
+    return validator;
+  }
+
+  return validator;
+}
+
+function emailIsValid(value) {
+  const validator = {
+    isValid: true,
+    errorMessage: null,
+  };
+
+  if (isEmpty(value)) {
+    validator.isValid = false;
+    validator.errorMessage = 'O campo é obrigatório';
+    return validator;
+  }
+
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!regex.test(value)) {
+    validator.isValid = false;
+    validator.errorMessage = 'O email deve ser válido.';
+    return validator;
+  }
+
   return validator;
 }
 
