@@ -38,7 +38,10 @@ class Adotante
             ", self::class, $params);
     }
 
-    public static function get($id) {}
+    public static function get($id)
+    {
+        return (new self)->query('a.id = :id', ['id' => $id])->fetch();
+    }
 
     public static function all($filtro = '')
     {

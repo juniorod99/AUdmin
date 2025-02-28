@@ -2,13 +2,13 @@
 if (!auth()) {
     abort(404);
 }
+// dd($adotante);
 ?>
 <div class="container">
     <?php require 'menu.view.php' ?>
 
     <div class="main">
         <?php require 'topbar.view.php' ?>
-
 
         <div id="visualizar">
             <div id="container">
@@ -21,51 +21,70 @@ if (!auth()) {
                         <div class="adotante_dados">
                             <div>
                                 <h4>Nome</h4>
-                                <span>Raimundo Junior</span>
+                                <span><?= $adotante->nome ?></span>
                             </div>
                             <div>
                                 <h4>Idade</h4>
-                                <span>26</span>
+                                <span><?= $adotante->idade ?></span>
                             </div>
                             <div>
                                 <h4>Sexo</h4>
-                                <span>Masculino</span>
+                                <span><?= $adotante->sexo ?></span>
                             </div>
                             <div>
                                 <h4>Rede Social</h4>
-                                <span>@natojunior_</span>
+                                <?php if (isset($adotante->rede_social)): ?>
+                                    <span><?= $adotante->rede_social ?></span>
+                                <?php else : ?>
+                                    <span>-</span>
+                                <?php endif; ?>
                             </div>
                         </div>
-                        <div class="adotante_foto">
-                            <div>
-                                <img src="../assets/img/adotantes/9778fde1671f55bd620a242833ea5a54.png" alt="">
+                        <?php if (isset($adotante->foto)): ?>
+                            <div class="adotante_foto">
+                                <div>
+                                    <img src="../assets/img/<?= $adotante->foto ?>" alt="">
+                                </div>
                             </div>
-                        </div>
+                        <?php else : ?>
+                            <div style="display: none;">
+                                <div>
+                                </div>
+                            </div>
+                        <?php endif; ?>
                         <div class="adotante_infos col-2">
                             <div>
                                 <h4>Telefone</h4>
-                                <span>(85) 91234-6789</span>
+                                <span><?= $adotante->telefone ?></span>
                             </div>
                             <div>
                                 <h4>Email</h4>
-                                <span>junior@email.com</span>
+                                <span><?= $adotante->email ?></span>
                             </div>
                             <div>
                                 <h4>Bairro</h4>
-                                <span>Aerolandia</span>
+                                <span><?= $adotante->bairro ?></span>
                             </div>
                             <div>
                                 <h4>Rua</h4>
-                                <span>Rua Capitão Vasconcelos, 475</span>
+                                <span><?= $adotante->rua ?></span>
                             </div>
                         </div>
                         <div class="adotante_obs col-2">
                             <div>
                                 <h4>Observações</h4>
-                                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis ullam id ipsam sint totam animi facere eos sed explicabo magnam quas a ut, eius maxime molestiae dolore dolor similique. Nisi.</span>
+                                <?php if (isset($adotante->observacao)): ?>
+                                    <span><?= $adotante->observacao ?></span>
+                                <?php else : ?>
+                                    <span>-</span>
+                                <?php endif; ?>
                             </div>
                             <div>
-                                <a href="../assets/img/adotantes-docs/3188f96bebad51bedbba1876825f4853.pdf" target="_blank">Abrir Documento</a>
+                                <?php if (isset($adotante->documentos)): ?>
+                                    <a href="../assets/img/<?= $adotante->documentos ?>" target="_blank">Abrir Documento</a>
+                                <?php else : ?>
+                                    <span>Nenhum documento cadastrado.</span>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>
