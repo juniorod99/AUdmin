@@ -52,7 +52,7 @@ if (!auth()) {
                                 <td><?= $adotante->email ?></td>
                                 <td class="table_options">
                                     <a href="visualizar-adotante?id=<?= $adotante->id ?>"><ion-icon name="document"></ion-icon></a>
-                                    <a href="editar-adotante?id=<?= $adotante->id ?>"><ion-icon name="create"></ion-icon></a>
+                                    <a href="alterar-adotante?id=<?= $adotante->id ?>"><ion-icon name="create"></ion-icon></a>
                                     <a href="deletar-adotante?id=<?= $adotante->id ?>"><ion-icon name="trash"></ion-icon></a>
                                 </td>
                             </tr>
