@@ -13,10 +13,12 @@ $dadosFormulario = $_POST;
 $img = $_FILES['imagem'];
 $doc = $_FILES['documentos'];
 unset($dadosFormulario['id']);
-if (empty($img['name'])) {
-    echo "nenhuma foto enviada";
-} else {
+
+$dadosAdotante = Adotante::get($id);
+
+if (!empty($img['name'])) {
     echo "enviou foto";
 }
-dd($id, $dadosFormulario, $img, $doc);
+dd($id, $dadosFormulario, $img, $doc, $dadosAdotante);
 // dd($img['name']);
+// 1 - pegar dados antigos usuario

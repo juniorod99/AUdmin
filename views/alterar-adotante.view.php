@@ -69,9 +69,9 @@ if (!auth()) {
                         </div>
 
                         <div class="input_box">
-                            <label for="rede" class="form_label">Rede Social</label>
+                            <label for="rede_social" class="form_label">Rede Social</label>
                             <div class="input_field">
-                                <input type="text" name="rede" id="rede" class="form_control" value="<?= $adotante->rede_social ?>" placeholder="Link da rede social">
+                                <input type="text" name="rede_social" id="rede" class="form_control" value="<?= $adotante->rede_social ?>" placeholder="Link da rede social">
                             </div>
                             <span class="error"></span>
                         </div>
@@ -109,9 +109,9 @@ if (!auth()) {
                         </div>
 
                         <div class="input_box col-2">
-                            <label for="observacoes" class="form_label">Observações Gerais</label>
+                            <label for="observacao" class="form_label">Observações Gerais</label>
                             <div class="input_field">
-                                <textarea class="form_control" name="observacoes" id="observacoes" cols="30" rows="5"><?= $adotante->observacao ?></textarea>
+                                <textarea class="form_control" name="observacao" id="observacao" cols="30" rows="5"><?= $adotante->observacao ?></textarea>
                             </div>
                         </div>
 
