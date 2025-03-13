@@ -16,9 +16,37 @@ unset($dadosFormulario['id']);
 
 $dadosAdotante = Adotante::get($id);
 
-if (!empty($img['name'])) {
-    echo "enviou foto";
+$camposAlterados = [];
+$params = [];
+
+foreach ($dadosFormulario as $campo => $valorForm) {
+    if ($valorForm != $dadosAdotante->$campo) {
+        $camposAlterados[] = "$campo = ?";
+        $params[] = trim($valorForm);
+    }
 }
-dd($id, $dadosFormulario, $img, $doc, $dadosAdotante);
-// dd($img['name']);
-// 1 - pegar dados antigos usuario
+
+if (!empty($img['name'])) {
+    echo "enviou foto <br>";
+    $novoNome = md5(rand());
+    $extensao = pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
+    $imagem = "adotantes/$novoNome.$extensao";
+    $camposAlterados[] = "foto = ?";
+    $params[] = $imagem;
+    // move_uploaded_file($_FILES['imagem']['tmp_name'], __DIR__ . '/../assets/img/' . $imagem);
+    if ($dadosAdotante->foto) {
+        echo "ele ja tinha foto <br>";
+        if (file_exists(__DIR__ . '/../assets/img/' . $dadosAdotante->foto)) {
+            echo "arquivo existe";
+            // unlink(__DIR__ . '/../assets/img/' . $dadosAdotante->foto);
+        }
+    }
+}
+
+$params[] = $id;
+
+dd($camposAlterados, $params);
+$database->query(
+    "update adotantes set" . implode(', ', $camposAlterados) . "where id = ?",
+    params: $params
+);
