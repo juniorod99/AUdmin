@@ -55,7 +55,16 @@ if (!auth()) {
                                     <a href="visualizar-adotante?id=<?= $adotante->id ?>"><ion-icon name="document"></ion-icon></a>
                                     <a href="alterar-adotante?id=<?= $adotante->id ?>"><ion-icon name="create"></ion-icon></a>
                                     <!-- <a href="deletar-adotante?id=<?= $adotante->id ?>"><ion-icon name="trash"></ion-icon></a> -->
-                                    <button class="excluirBtn" value="<?= $adotante->id ?>"><ion-icon name="trash"></ion-icon></button>
+                                    <button onclick="mostrarConfirmacaoExclusao(<?= $adotante->id ?>)" class=" excluirBtn" value="<?= $adotante->id ?>"><ion-icon name="trash"></ion-icon></button>
+                                </td>
+                            </tr>
+                            <tr id="confirmacao-<?= $adotante->id ?>" style="display:none;">
+                                <td colspan="6">
+                                    <div class="confirmacao-exclusao">
+                                        <p>Tem certeza que deseja excluir este adotante?</p>
+                                        <button onclick="confirmarExclusao(<?= $adotante->id ?>)">Sim</button>
+                                        <button onclick="cancelarExclusao(<?= $adotante->id ?>)">Não</button>
+                                    </div>
                                 </td>
                             </tr>
                         <?php endforeach; ?>
@@ -67,4 +76,5 @@ if (!auth()) {
 </div>
 
 <script defer src="../assets/js/script.js"></script>
+<!-- <script defer src="../assets/js/mostrarConfirmacao.js"></script> -->
 <script defer src="../assets/js/mostrarModal.js"></script>
