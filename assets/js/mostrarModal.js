@@ -9,7 +9,6 @@ buttons.forEach((button) => {
     modal.showModal();
 
     buttonSubmit.onclick = function () {
-      //   window.location.href = `excluir-adotante.controller.php?id=${buttonValue}`;
       fetch('excluir-adotante', {
         method: 'POST',
         headers: {
@@ -19,6 +18,7 @@ buttons.forEach((button) => {
       })
         .then((response) => {
           if (response.ok) {
+            localStorage.setItem('mensagem', 'Adotante excluido com sucesso!');
             window.location.reload();
           } else {
             alert('Erro ao excluir adotante');
@@ -35,3 +35,25 @@ buttons.forEach((button) => {
     };
   };
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+  if (localStorage.getItem('mensagem')) {
+    showNotify();
+    localStorage.removeItem('mensagem');
+  }
+});
+
+function showNotify(mensagem) {
+  Toastify({
+    text: 'Adotante excluido com sucesso!',
+    duration: 5000,
+    close: true,
+    gravity: 'top',
+    position: 'right',
+    stopOnFocus: true,
+    style: {
+      background: '#00b09b',
+    },
+    onClick: function () {},
+  }).showToast();
+}
