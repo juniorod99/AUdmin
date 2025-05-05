@@ -1,3 +1,5 @@
+import { showNotify } from './mostrarNotificacao.js';
+
 const buttons = document.querySelectorAll('.excluirBtn');
 const modal = document.querySelector('dialog');
 
@@ -38,22 +40,7 @@ buttons.forEach((button) => {
 
 document.addEventListener('DOMContentLoaded', function () {
   if (localStorage.getItem('mensagem')) {
-    showNotify();
+    showNotify('Adotante excluido com sucesso!');
     localStorage.removeItem('mensagem');
   }
 });
-
-function showNotify(mensagem) {
-  Toastify({
-    text: 'Adotante excluido com sucesso!',
-    duration: 5000,
-    close: true,
-    gravity: 'top',
-    position: 'right',
-    stopOnFocus: true,
-    style: {
-      background: '#00b09b',
-    },
-    onClick: function () {},
-  }).showToast();
-}

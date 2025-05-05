@@ -55,7 +55,7 @@ if (!auth()) {
                                     <a href="visualizar-adotante?id=<?= $adotante->id ?>"><ion-icon name="document"></ion-icon></a>
                                     <a href="alterar-adotante?id=<?= $adotante->id ?>"><ion-icon name="create"></ion-icon></a>
                                     <!-- <a href="deletar-adotante?id=<?= $adotante->id ?>"><ion-icon name="trash"></ion-icon></a> -->
-                                    <button onclick="mostrarConfirmacaoExclusao(<?= $adotante->id ?>)" class=" excluirBtn" value="<?= $adotante->id ?>"><ion-icon name="trash"></ion-icon></button>
+                                    <button class=" excluirBtn" value="<?= $adotante->id ?>"><ion-icon name="trash"></ion-icon></button>
                                 </td>
                             </tr>
                             <tr id="confirmacao-<?= $adotante->id ?>" style="display:none;">
@@ -77,4 +77,4 @@ if (!auth()) {
 
 <script defer src="../assets/js/script.js"></script>
 <!-- <script defer src="../assets/js/mostrarConfirmacao.js"></script> -->
-<script defer src="../assets/js/mostrarModal.js"></script>
+<script defer type="module" src="../assets/js/mostrarModal.js"></script>
