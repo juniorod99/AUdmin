@@ -137,3 +137,4 @@ if (!auth()) {
 <script defer src="../assets/js/script.js"></script>
 <script defer src="../assets/js/dropFile.js"></script>
 <script defer src="../assets/js/validarFormularioAdotantes.js"></script>
+<script defer src="../assets/js/desabilitarSubmit.js"></script>
