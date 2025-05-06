@@ -27,4 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
   // Desabilita inicialmente se não houver alterações
   submitButton.disabled = true;
   submitButton.classList.add('disabled');
+  submitButton.onclick = function () {
+    localStorage.setItem('mensagem', 'alteracao');
+  };
 });

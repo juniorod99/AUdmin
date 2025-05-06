@@ -39,8 +39,17 @@ buttons.forEach((button) => {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-  if (localStorage.getItem('mensagem')) {
-    showNotify('Adotante excluido com sucesso!');
+  const mensagem = localStorage.getItem('mensagem');
+
+  if (mensagem) {
+    const mensagens = {
+      exclusao: 'Adotante excluído com sucesso!',
+      alteracao: 'Dados alterados com sucesso!',
+    };
+
+    const textoMensagem = mensagens[mensagem] || mensagem;
+
+    showNotify(textoMensagem);
     localStorage.removeItem('mensagem');
   }
 });
