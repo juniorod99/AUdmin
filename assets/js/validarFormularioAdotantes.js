@@ -1,5 +1,7 @@
 //Validar campos formulario
 const form = document.querySelector('#form');
+const path = window.location.pathname;
+const pageName = path.split('/').pop();
 
 form.addEventListener('submit', function (e) {
   let errosFields = validarFields();
@@ -14,6 +16,9 @@ form.addEventListener('submit', function (e) {
   }
 
   if (errosFields === 0 && errosSelects === 0) {
+    if (pageName === 'cadastro-adotante') {
+      localStorage.setItem('mensagem', 'cadastro');
+    }
     return true;
   } else {
     e.preventDefault();

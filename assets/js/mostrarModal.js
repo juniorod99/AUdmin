@@ -1,5 +1,3 @@
-import { showNotify } from './mostrarNotificacao.js';
-
 const buttons = document.querySelectorAll('.excluirBtn');
 const modal = document.querySelector('dialog');
 
@@ -36,20 +34,4 @@ buttons.forEach((button) => {
       modal.close();
     };
   };
-});
-
-document.addEventListener('DOMContentLoaded', function () {
-  const mensagem = localStorage.getItem('mensagem');
-
-  if (mensagem) {
-    const mensagens = {
-      exclusao: 'Adotante excluído com sucesso!',
-      alteracao: 'Dados alterados com sucesso!',
-    };
-
-    const textoMensagem = mensagens[mensagem] || mensagem;
-
-    showNotify(textoMensagem);
-    localStorage.removeItem('mensagem');
-  }
 });

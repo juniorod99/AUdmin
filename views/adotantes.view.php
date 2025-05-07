@@ -2,8 +2,6 @@
 if (!auth()) {
     abort(404);
 }
-// dd($animais);
-// require 'partials/_modal.php';
 ?>
 <?php require 'partials/_modal.php'; ?>
 <div class="container">
@@ -75,5 +73,5 @@ if (!auth()) {
 </div>
 
 <script defer src="../assets/js/script.js"></script>
-<!-- <script defer src="../assets/js/mostrarConfirmacao.js"></script> -->
-<script defer type="module" src="../assets/js/mostrarModal.js"></script>
+<script defer src="../assets/js/mostrarNotificacao.js"></script>
+<script defer src="../assets/js/mostrarModal.js"></script>
