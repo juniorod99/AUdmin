@@ -9,7 +9,6 @@ if (!auth()) {
     <div class="main">
         <?php require 'topbar.view.php' ?>
 
-
         <!-- ===== Cards ======  -->
         <div class="cardBox">
             <div class="card">
@@ -133,94 +132,22 @@ if (!auth()) {
                 </div>
 
                 <table>
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
-                            </div>
-                        </td>
-                        <td>
-                            <h4>João <br> <span>Passaré</span></h4>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
-                            </div>
-                        </td>
-                        <td>
-                            <h4>Pedro <br> <span>Dionisio Torres</span></h4>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
-                            </div>
-                        </td>
-                        <td>
-                            <h4>Maria <br> <span>Edson Queiroz</span></h4>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
-                            </div>
-                        </td>
-                        <td>
-                            <h4>Aline <br> <span>Jangurussu</span></h4>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
-                            </div>
-                        </td>
-                        <td>
-                            <h4>Gabriel <br> <span>Parquelândia</span></h4>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
-                            </div>
-                        </td>
-                        <td>
-                            <h4>Milton <br> <span>Eusébio</span></h4>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
-                            </div>
-                        </td>
-                        <td>
-                            <h4>Vitória <br> <span>Messejana</span></h4>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
-                            </div>
-                        </td>
-                        <td>
-                            <h4>Anderson <br> <span>Meireles</span></h4>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td width="60px">
-                            <div class="imgBox"><img src="./assets/img/profile.png" alt="">
-                            </div>
-                        </td>
-                        <td>
-                            <h4>Amelia <br> <span>Aldeota</span></h4>
-                        </td>
-                    </tr>
+                    <?php foreach ($adotantes as $adotante): ?>
+                        <tr>
+                            <td width="60px">
+                                <div class="imgBox">
+                                    <?php if (!is_null($adotante->foto)): ?>
+                                        <img src="../assets/img/<?= $adotante->foto ?>">
+                                    <?php else: ?>
+                                        <img src="../assets/img/profile.png">
+                                    <?php endif; ?>
+                                </div>
+                            </td>
+                            <td>
+                                <h4><?= formatarNome($adotante->nome) ?> <br> <span><?= $adotante->bairro ?></span></h4>
+                            </td>
+                        </tr>
+                    <?php endforeach; ?>
                 </table>
             </div>
         </div>

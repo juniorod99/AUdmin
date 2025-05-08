@@ -4,4 +4,5 @@
 // }
 
 $animais = Animal::all('');
-view('home', compact('animais'));
+$adotantes = Adotante::all('');
+view('home', compact('animais', 'adotantes'));
