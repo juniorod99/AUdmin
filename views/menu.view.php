@@ -7,7 +7,7 @@
                 </a>
             </li>
 
-            <li class="hovered">
+            <li>
                 <a href="/home">
                     <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                     <span class="title">Home</span>
@@ -33,20 +33,6 @@
                     <span class="title">Adotantes</span>
                 </a>
             </li>
-
-            <!-- <li>
-                <a href="/cadastro-animal">
-                    <span class="icon"><ion-icon name="add-outline"></ion-icon></span>
-                    <span class="title">Cadastrar Animal</span>
-                </a>
-            </li> -->
-
-            <!-- <li>
-                <a href="/cadastro-adotantes">
-                    <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
-                    <span class="title">Cadastrar Adotante</span>
-                </a>
-            </li> -->
 
             <li>
                 <a href="/adocao">

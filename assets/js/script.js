@@ -1,14 +1,33 @@
-// add hovereed class to seelect list item
-let list = document.querySelectorAll('.navigation li');
+// add hovered class to selected list item
+document.addEventListener('DOMContentLoaded', function () {
+  const menu = document.querySelector('.navigation ul');
+  const menuItems = document.querySelectorAll('.navigation li');
+  const currentPath = window.location.pathname; // Ex: "/home"
+  let activeItem = null;
 
-function activeLink() {
-  list.forEach((item) => {
-    item.classList.remove('hovered');
+  // 1. Define o item ativo com base na URL
+  menuItems.forEach((item) => {
+    const link = item.querySelector('a');
+    if (link.getAttribute('href') === currentPath) {
+      item.classList.add('hovered');
+      activeItem = item;
+    }
   });
-  this.classList.add('hovered');
-}
 
-list.forEach((item) => item.addEventListener('mouseover', activeLink));
+  // 2. Remove o hover do item ativo quando o mouse entra no menu
+  menu.addEventListener('mouseenter', () => {
+    if (activeItem) {
+      activeItem.classList.remove('hovered'); // Remove cor de fundo
+    }
+  });
+
+  // 3. Restaura o hover do item ativo quando o mouse sai do menu
+  menu.addEventListener('mouseleave', () => {
+    if (activeItem) {
+      activeItem.classList.add('hovered'); // Volta ao ativo
+    }
+  });
+});
 
 // Menu Toggle
 let toggle = document.querySelector('.toggle');
