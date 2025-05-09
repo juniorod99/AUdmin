@@ -4,7 +4,6 @@
     height: 100%;
     background: var(--orange);
     border-left: 10px solid var(--orange);
-    transition: 0.5s;
     overflow: hidden;
 }
 

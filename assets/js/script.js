@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const currentPath = window.location.pathname; // Ex: "/home"
   let activeItem = null;
 
-  // 1. Define o item ativo com base na URL
   menuItems.forEach((item) => {
     const link = item.querySelector('a');
     if (link.getAttribute('href') === currentPath) {
@@ -14,30 +13,55 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  // 2. Remove o hover do item ativo quando o mouse entra no menu
   menu.addEventListener('mouseenter', () => {
     if (activeItem) {
-      activeItem.classList.remove('hovered'); // Remove cor de fundo
+      activeItem.classList.remove('hovered');
     }
   });
 
-  // 3. Restaura o hover do item ativo quando o mouse sai do menu
   menu.addEventListener('mouseleave', () => {
     if (activeItem) {
-      activeItem.classList.add('hovered'); // Volta ao ativo
+      activeItem.classList.add('hovered');
     }
+  });
+
+  const navigation = document.querySelector('.navigation');
+  const main = document.querySelector('.main');
+  const toggleBtn = document.querySelector('.toggle');
+
+  const isCollapsed = localStorage.getItem('menuCollapsed') === 'true';
+
+  if (isCollapsed) {
+    navigation.classList.add('active');
+    main.classList.add('active');
+  }
+
+  setTimeout(() => {
+    navigation.style.transition = '0.5s';
+    main.style.transition = '0.5s';
+  }, 10);
+
+  toggleBtn.addEventListener('click', function () {
+    navigation.classList.toggle('active');
+    main.classList.toggle('active');
+
+    localStorage.setItem(
+      'menuCollapsed',
+      navigation.classList.contains('active'),
+      main.classList.contains('active'),
+    );
   });
 });
 
 // Menu Toggle
-let toggle = document.querySelector('.toggle');
-let navigation = document.querySelector('.navigation');
-let main = document.querySelector('.main');
+// let toggle = document.querySelector('.toggle');
+// let navigation = document.querySelector('.navigation');
+// let main = document.querySelector('.main');
 
-toggle.onclick = function () {
-  navigation.classList.toggle('active');
-  main.classList.toggle('active');
-};
+// toggle.onclick = function () {
+//   navigation.classList.toggle('active');
+//   main.classList.toggle('active');
+// };
 
 //Show Password
 const passwordIcons = document.querySelectorAll('.password_icon');
