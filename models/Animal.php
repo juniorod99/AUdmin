@@ -11,9 +11,12 @@ class Animal
     public $castrado;
     public $local;
     public $lar_temp;
-    public $disp_adocao;
+    public $status;
+    public $causa_obito;
     public $docil;
+    public $abandono;
     public $local_origem;
+    public $data_encontro;
     public $observacao;
     public $data_cadastro;
 
@@ -32,9 +35,12 @@ class Animal
                 a.castrado,
                 a.local,
                 a.lar_temp,
-                a.disp_adocao,
+                a.status,
+                a.causa_obito,
                 a.docil,
+                a.abandono,
                 a.local_origem,
+                a.data_encontro,
                 a.observacao,
                 a.data_cadastro
             from

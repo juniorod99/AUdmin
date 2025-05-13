@@ -113,10 +113,12 @@ if (!auth()) {
                                     <?php endif; ?>
                                 </td>
                                 <td>
-                                    <?php if ($animal->disp_adocao == 1): ?>
+                                    <?php if ($animal->status == 'Disponível'): ?>
                                         <span class="status delivered">Disponivel</span>
-                                    <?php elseif ($animal->disp_adocao == 0): ?>
+                                    <?php elseif ($animal->status == 'Indisponível'): ?>
                                         <span class="status return">Indisponivel</span>
+                                    <?php elseif ($animal->status == 'Estrelinha'): ?>
+                                        <span class="status pending">Estrelinha</span>
                                     <?php endif; ?>
                                 </td>
                             </tr>

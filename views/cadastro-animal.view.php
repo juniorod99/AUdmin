@@ -78,6 +78,22 @@ if (!auth()) {
                         </div>
 
                         <div class="input_box">
+                            <label for="origem" class="form_label">Local de Origem</label>
+                            <div class="input_field">
+                                <input type="text" name="origem" id="origem" class="form_control" placeholder="ex: RU velho">
+                            </div>
+                            <span class="error"></span>
+                        </div>
+
+                        <div class="input_box">
+                            <label for="data_encontro" class="form_label">Data de encontro</label>
+                            <div class="input_field">
+                                <input type="date" name="data_encontro" id="data_encontro" class="form_control" placeholder="">
+                            </div>
+                            <span class="error"></span>
+                        </div>
+
+                        <div class="input_box">
                             <label for="vacinado" class="form_label">Vacinado</label>
                             <div class="input_field">
                                 <select class="form_control" name="vacinado" id="vacinado">
@@ -104,36 +120,12 @@ if (!auth()) {
                         </div>
 
                         <div class="input_box">
-                            <label for="local" class="form_label">Ele está no campus ou LT?</label>
-                            <div class="input_field">
-                                <select class="form_control" name="local" id="local">
-                                    <option value="" selected disabled>Selecione uma opção</option>
-                                    <option value="Campus">Campus</option>
-                                    <option value="Lar Temporário">Lar Temporário</option>
-                                </select>
-                            </div>
-                            <span class="error"></span>
-                        </div>
-
-                        <div class="input_box">
-                            <label for="lt" class="form_label">Informe o LT</label>
-                            <div class="input_field">
-                                <select disabled class="form_control" name="lt" id="lt">
-                                    <option disabled selected>Selecione o LT</option>
-                                    <option value="Casa do Fulano">Casa do Fulano</option>
-                                    <option value="Casa do Ciclano">Casa do Ciclano</option>
-                                </select>
-                            </div>
-                            <span class="error"></span>
-                        </div>
-
-                        <div class="input_box">
                             <label for="status" class="form_label">Status</label>
                             <div class="input_field">
                                 <select class="form_control" name="status" id="status">
                                     <option disabled selected>Selecione uma opção</option>
-                                    <option value="Disponivel">Disponível</option>
-                                    <option value="Indisponivel">Indisponível</option>
+                                    <option value="Disponível">Disponível</option>
+                                    <option value="Indisponível">Indisponível</option>
                                     <option value="Desaparecido">Desaparecido</option>
                                     <option value="Estrelinha">Estrelinha</option>
                                 </select>
@@ -146,9 +138,9 @@ if (!auth()) {
                             <div class="input_field">
                                 <select disabled class="form_control" name="causa_obito" id="causa_obito">
                                     <option disabled selected>Selecione uma opção</option>
-                                    <option value="Disponivel">Velhice</option>
-                                    <option value="Indisponivel">Doença</option>
-                                    <option value="Desaparecido">Atropelamento</option>
+                                    <option value="Velhice">Velhice</option>
+                                    <option value="Doença">Doença</option>
+                                    <option value="Atropelamento">Atropelamento</option>
                                 </select>
                             </div>
                             <span class="error"></span>
@@ -187,17 +179,25 @@ if (!auth()) {
                         </div>
 
                         <div class="input_box">
-                            <label for="origem" class="form_label">Local de Origem</label>
+                            <label for="local" class="form_label">Ele está no campus ou LT?</label>
                             <div class="input_field">
-                                <input type="text" name="origem" id="origem" class="form_control" placeholder="ex: RU velho">
+                                <select class="form_control" name="local" id="local">
+                                    <option value="" selected disabled>Selecione uma opção</option>
+                                    <option value="Campus">Campus</option>
+                                    <option value="Lar Temporário">Lar Temporário</option>
+                                </select>
                             </div>
                             <span class="error"></span>
                         </div>
 
                         <div class="input_box">
-                            <label for="data_encontro" class="form_label">Data de encontro</label>
+                            <label for="lt" class="form_label">Informe o LT</label>
                             <div class="input_field">
-                                <input type="date" name="data_encontro" id="data_encontro" class="form_control" placeholder="">
+                                <select disabled class="form_control" name="lt" id="lt">
+                                    <option disabled selected>Selecione o LT</option>
+                                    <option value="Casa do Fulano">Casa do Fulano</option>
+                                    <option value="Casa do Ciclano">Casa do Ciclano</option>
+                                </select>
                             </div>
                             <span class="error"></span>
                         </div>
