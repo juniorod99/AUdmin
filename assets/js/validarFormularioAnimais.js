@@ -15,6 +15,22 @@ selectLocal.addEventListener('change', (event) => {
   }
 });
 
+const selectStatus = document.querySelector('#status');
+const selectCausaObito = document.querySelector('#causa_obito');
+const optionsCausaObito = selectCausaObito.options;
+
+selectStatus.addEventListener('change', (event) => {
+  const selectedOption =
+    selectStatus.options[selectStatus.selectedIndex].innerHTML;
+
+  if (selectedOption === 'Estrelinha')
+    selectCausaObito.removeAttribute('disabled');
+  else {
+    selectCausaObito.setAttribute('disabled', true);
+    optionsCausaObito[0].selected = true;
+  }
+});
+
 //Validar campos formulario
 const form = document.querySelector('#form');
 

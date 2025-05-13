@@ -71,39 +71,34 @@ if (!auth()) {
                                     <option value="" disabled selected>Selecione o sexo</option>
                                     <option value="Macho">Macho</option>
                                     <option value="Fêmea">Fêmea</option>
+                                    <option value="Não identificado">Não identificado</option>
                                 </select>
                             </div>
                             <span class="error"></span>
                         </div>
 
-                        <div id="vacinado" class="radio_container">
+                        <div class="input_box">
                             <label for="vacinado" class="form_label">Vacinado</label>
-                            <div class="radio_inputs">
-                                <div class="radio_box">
-                                    <input type="radio" name="vacinado" id="vac_sim" class="form_control" value="1">
-                                    <label for="vac_sim" class="form_label">Sim</label>
-                                </div>
-
-                                <div class="radio_box">
-                                    <input type="radio" name="vacinado" id="vac_nao" class="form_control" value="0">
-                                    <label for="vac_nao" class="form_label">Não</label>
-                                </div>
+                            <div class="input_field">
+                                <select class="form_control" name="vacinado" id="vacinado">
+                                    <option value="" disabled selected>Selecione uma opção</option>
+                                    <option value="Sim">Sim</option>
+                                    <option value="Não">Não</option>
+                                    <option value="Não identificado">Não identificado</option>
+                                </select>
                             </div>
                             <span class="error"></span>
                         </div>
 
-                        <div id="castrado" class="radio_container">
-                            <label for="" class="form_label">Castrado</label>
-                            <div class="radio_inputs">
-                                <div class="radio_box">
-                                    <input type="radio" name="castrado" id="cast_sim" class="form_control" value="1">
-                                    <label for="cast_sim" class="form_label">Sim</label>
-                                </div>
-
-                                <div class="radio_box">
-                                    <input type="radio" name="castrado" id="cast_nao" class="form_control" value="0">
-                                    <label for="cast_nao" class="form_label">Não</label>
-                                </div>
+                        <div class="input_box">
+                            <label for="castrado" class="form_label">Castrado</label>
+                            <div class="input_field">
+                                <select class="form_control" name="castrado" id="castrado">
+                                    <option value="" disabled selected>Selecione uma opção</option>
+                                    <option value="Sim">Sim</option>
+                                    <option value="Não">Não</option>
+                                    <option value="Não identificado">Não identificado</option>
+                                </select>
                             </div>
                             <span class="error"></span>
                         </div>
@@ -132,24 +127,35 @@ if (!auth()) {
                             <span class="error"></span>
                         </div>
 
-                        <div id="adocao" class="radio_container">
-                            <label for="" class="form_label">Disponivel para adoção?</label>
-                            <div class="radio_inputs">
-                                <div class="radio_box">
-                                    <input type="radio" name="adocao" id="disp_sim" class="form_control" value="1">
-                                    <label for="disp_sim" class="form_label">Sim</label>
-                                </div>
+                        <div class="input_box">
+                            <label for="status" class="form_label">Status</label>
+                            <div class="input_field">
+                                <select class="form_control" name="status" id="status">
+                                    <option disabled selected>Selecione uma opção</option>
+                                    <option value="Disponivel">Disponível</option>
+                                    <option value="Indisponivel">Indisponível</option>
+                                    <option value="Desaparecido">Desaparecido</option>
+                                    <option value="Estrelinha">Estrelinha</option>
+                                </select>
+                            </div>
+                            <span class="error"></span>
+                        </div>
 
-                                <div class="radio_box">
-                                    <input type="radio" name="adocao" id="disp_nao" class="form_control" value="0">
-                                    <label for="disp_nao" class="form_label">Não</label>
-                                </div>
+                        <div class="input_box">
+                            <label for="causa_obito" class="form_label">Causa do Óbito</label>
+                            <div class="input_field">
+                                <select disabled class="form_control" name="causa_obito" id="causa_obito">
+                                    <option disabled selected>Selecione uma opção</option>
+                                    <option value="Disponivel">Velhice</option>
+                                    <option value="Indisponivel">Doença</option>
+                                    <option value="Desaparecido">Atropelamento</option>
+                                </select>
                             </div>
                             <span class="error"></span>
                         </div>
 
                         <div id="docil" class="radio_container">
-                            <label for="" class="form_label">O animal é docil?</label>
+                            <span class="form_label">O animal é docil?</span>
                             <div class="radio_inputs">
                                 <div class="radio_box">
                                     <input type="radio" name="docil" id="docil_sim" class="form_control" value="1">
@@ -164,7 +170,23 @@ if (!auth()) {
                             <span class="error"></span>
                         </div>
 
-                        <div class="input_box col-2">
+                        <div id="abandono" class="radio_container">
+                            <span class="form_label">O animal foi abandonado?</span>
+                            <div class="radio_inputs">
+                                <div class="radio_box">
+                                    <input type="radio" name="abandono" id="abandono_sim" class="form_control" value="1">
+                                    <label for="abandono_sim" class="form_label">Sim</label>
+                                </div>
+
+                                <div class="radio_box">
+                                    <input type="radio" name="abandono" id="abandono_nao" class="form_control" value="0">
+                                    <label for="abandono_nao" class="form_label">Não</label>
+                                </div>
+                            </div>
+                            <span class="error"></span>
+                        </div>
+
+                        <div class="input_box">
                             <label for="origem" class="form_label">Local de Origem</label>
                             <div class="input_field">
                                 <input type="text" name="origem" id="origem" class="form_control" placeholder="ex: RU velho">
@@ -172,10 +194,18 @@ if (!auth()) {
                             <span class="error"></span>
                         </div>
 
-                        <div class="input_box col-2">
-                            <label for="observacao" class="form_label">Observações Gerais</label>
+                        <div class="input_box">
+                            <label for="data_encontro" class="form_label">Data de encontro</label>
                             <div class="input_field">
-                                <textarea class="form_control" name="observacoes" id="" cols="30" rows="5"></textarea>
+                                <input type="date" name="data_encontro" id="data_encontro" class="form_control" placeholder="">
+                            </div>
+                            <span class="error"></span>
+                        </div>
+
+                        <div class="input_box col-2">
+                            <label for="observacoes" class="form_label">Observações Gerais</label>
+                            <div class="input_field">
+                                <textarea class="form_control" name="observacoes" id="observacoes" cols="30" rows="5"></textarea>
                             </div>
                         </div>
 
