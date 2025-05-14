@@ -103,13 +103,18 @@
     text-align: start;
 }
 
-.details .recentOrders table tr td:nth-child(3),
+/* .details .recentOrders table tr td:nth-child(3),
 .details .recentOrders table tr td:nth-child(4),
 .details .recentOrders table tr td:nth-child(5),
 .details .recentOrders table tr td:nth-child(6),
 .details .recentOrders table tr td:nth-child(7){
     text-align: center;
+} */
+
+.details .recentOrders table tr td{
+    text-align: center;
 }
+
 .details .recentOrders table tr td:last-child{
     text-align: end;
 }

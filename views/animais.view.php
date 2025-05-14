@@ -31,6 +31,7 @@ if (!auth()) {
                             <td>Castrado</td>
                             <td>Local</td>
                             <td>Situação</td>
+                            <td>Ações</td>
                         </tr>
                     </thead>
 
@@ -52,10 +53,12 @@ if (!auth()) {
                                 <td><?= $animal->sexo ?></td>
 
                                 <td>
-                                    <?php if ($animal->castrado == 1): ?>
+                                    <?php if ($animal->castrado == "Sim"): ?>
                                         ✅
-                                    <?php else: ?>
+                                    <?php elseif ($animal->castrado == "Não"): ?>
                                         ❌
+                                    <?php else: ?>
+                                        ❓
                                     <?php endif; ?>
                                 </td>
                                 <td><?= $animal->local ?></td>
@@ -67,6 +70,11 @@ if (!auth()) {
                                     <?php elseif ($animal->status == 'Estrelinha'): ?>
                                         <span class="status pending">Estrelinha</span>
                                     <?php endif; ?>
+                                </td>
+                                <td class="table_options">
+                                    <a href="visualizar-animal?id=<?= $animal->id ?>"><ion-icon name="document"></ion-icon></a>
+                                    <a href="alterar-animal?id=<?= $animal->id ?>"><ion-icon name="create"></ion-icon></a>
+                                    <button class="excluirBtn" value="<?= $animal->id ?>"><ion-icon name="trash"></ion-icon></button>
                                 </td>
                             </tr>
                         <?php endforeach; ?>

@@ -106,10 +106,12 @@ if (!auth()) {
                                 <td><?= $animal->nome ?></td>
                                 <td><?= $animal->especie ?></td>
                                 <td>
-                                    <?php if ($animal->castrado == 1): ?>
+                                    <?php if ($animal->castrado == "Sim"): ?>
                                         ✅
-                                    <?php else: ?>
+                                    <?php elseif ($animal->castrado == "Não"): ?>
                                         ❌
+                                    <?php else: ?>
+                                        ❓
                                     <?php endif; ?>
                                 </td>
                                 <td>

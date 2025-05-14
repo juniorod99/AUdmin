@@ -45,5 +45,5 @@ $database->query(
     ]
 );
 
-header('Location: /home');
+header('Location: /animais');
 exit();
