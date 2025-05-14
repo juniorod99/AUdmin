@@ -64,13 +64,15 @@
 #data_container .adotante_foto div img{
     width: 100%;
     height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 #data_container .adotante_infos{
     display: flex;
     flex-wrap: wrap;
-    gap: 16px;
-    justify-content: space-between;
+    gap: 40px;
+    justify-content: flex-starts;
 }
 
 #data_container .adotante_obs{
