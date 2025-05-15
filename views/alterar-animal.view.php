@@ -29,9 +29,9 @@ if (!auth()) {
                             </div>
 
                             <div class="input_box">
-                                <label for="faixa" class="form_label">Faixa etária</label>
+                                <label for="faixa_etaria" class="form_label">Faixa etária</label>
                                 <div class="input_field">
-                                    <select class="form_control" name="faixa" id="faixa">
+                                    <select class="form_control" name="faixa_etaria" id="faixa_etaria">
                                         <option selected disabled>Selecione uma faixa etária</option>
                                         <option value="Filhote" <?php echo ($animal->faixa_etaria == 'Filhote') ? 'selected' : ''; ?>>Filhote</option>
                                         <option value="Jovem" <?php echo ($animal->faixa_etaria == 'Jovem') ? 'selected' : ''; ?>>Jovem</option>
@@ -83,9 +83,9 @@ if (!auth()) {
                         </div>
 
                         <div class="input_box">
-                            <label for="origem" class="form_label">Local de Origem</label>
+                            <label for="local_origem" class="form_label">Local de Origem</label>
                             <div class="input_field">
-                                <input type="text" name="origem" id="origem" class="form_control" placeholder="ex: RU velho" value="<?= $animal->local_origem ?>">
+                                <input type="text" name="local_origem" id="local_origem" class="form_control" placeholder="ex: RU velho" value="<?= $animal->local_origem ?>">
                             </div>
                             <span class="error"></span>
                         </div>
@@ -196,9 +196,9 @@ if (!auth()) {
                         </div>
 
                         <div class="input_box">
-                            <label for="lt" class="form_label">Informe o LT</label>
+                            <label for="lar_temp" class="form_label">Informe o LT</label>
                             <div class="input_field">
-                                <select class="form_control" name="lt" id="lt">
+                                <select class="form_control" name="lar_temp" id="lar_temp">
                                     <option disabled selected>Selecione o LT</option>
                                     <option value="Casa do Fulano" <?php echo ($animal->lar_temp == 'Casa do Fulano') ? 'selected' : ''; ?>>Casa do Fulano</option>
                                     <option value="Casa do Ciclano" <?php echo ($animal->lar_temp == 'Casa do Ciclano') ? 'selected' : ''; ?>>Casa do Ciclano</option>
@@ -208,9 +208,9 @@ if (!auth()) {
                         </div>
 
                         <div class="input_box col-2">
-                            <label for="observacoes" class="form_label">Observações Gerais</label>
+                            <label for="observacao" class="form_label">Observações Gerais</label>
                             <div class="input_field">
-                                <textarea class="form_control" name="observacoes" id="observacoes" cols="30" rows="5"><?= $animal->observacao ?></textarea>
+                                <textarea class="form_control" name="observacao" id="observacao" cols="30" rows="5"><?= $animal->observacao ?></textarea>
                             </div>
                         </div>
 

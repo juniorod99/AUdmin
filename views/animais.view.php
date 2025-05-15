@@ -3,6 +3,7 @@ if (!auth()) {
     abort(404);
 }
 // dd($animais);
+require 'partials/_modal.php';
 ?>
 <div class="container">
     <?php require 'menu.view.php' ?>
@@ -86,3 +87,5 @@ if (!auth()) {
 </div>
 
 <script defer src="../assets/js/script.js"></script>
+<script defer src="../assets/js/mostrarNotificacao.js"></script>
+<script defer src="../assets/js/mostrarModal.js"></script>

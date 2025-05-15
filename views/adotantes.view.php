@@ -2,8 +2,10 @@
 if (!auth()) {
     abort(404);
 }
+
+require 'partials/_modal.php';
 ?>
-<?php require 'partials/_modal.php'; ?>
+
 <div class="container">
     <?php require 'menu.view.php' ?>
 
