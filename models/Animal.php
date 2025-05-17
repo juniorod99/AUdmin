@@ -59,4 +59,16 @@ class Animal
     {
         return (new self)->query('nome like :filtro', ['filtro' => "%$filtro%"])->fetchAll();
     }
+
+    public static function delete($id)
+    {
+        $database = new Database(config('database'));
+        return $database->query("
+            delete
+            from
+                animais
+            where
+                id = :id  
+            ", self::class, ['id' => "$id"]);
+    }
 }

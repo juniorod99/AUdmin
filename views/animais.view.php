@@ -88,4 +88,4 @@ require 'partials/_modal.php';
 
 <script defer src="../assets/js/script.js"></script>
 <script defer src="../assets/js/mostrarNotificacao.js"></script>
-<script defer src="../assets/js/mostrarModal.js"></script>
+<script defer src="../assets/js/deleteModalAnimal.js"></script>

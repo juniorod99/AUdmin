@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     const textoMensagem = mensagens[mensagem] || mensagem;
-
+    console.log(textoMensagem);
     showNotify(textoMensagem);
     localStorage.removeItem('mensagem');
   }
